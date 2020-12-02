@@ -1,14 +1,14 @@
-# My first JavaScript ToDo-List
+# Build a Webshop
 
-_A webshop made with Javascript jQuery and jQuery UI as a school assignment, no focus on the paymentfunction_
+_A webshop made with jQuery and jQuery UI as a school assignment, no focus on the payment functionalities_
 
-Examples of functionality of the todo-list:
+Examples of functionality of the webshop:
 
-- Add a new todo
-- Remove todo
-- List a todo as done, and make it unclear again
-- Sort todo's (in alphabetical order)
-- Save todos to LocalStorage
+- Add products to a shopping cart
+- Simulate a purchase on the checkoutpage
+- Calculate a totalprice on the products in the shopping cart
+- Store the information in the shopping cart through extended objects, not only one product
+- Decrease/increase the amount of products in the shoppingcart and checkoutpage
 
 ---
 
@@ -27,7 +27,7 @@ Make a new folder
 - Use let instead of var
 - When naming variables use **camelCase**
 
-* Eg `let newTodo = new Todo(todoInput);`
+* Eg `let newProduct = new Product(productInput);`
 
 ### Functions
 
@@ -36,7 +36,7 @@ Make a new folder
 ### Classes
 
 - Class names should use **PascalCase**
-- Eg ´class Todo´
+- Eg ´class Product´
 
 ## Project structure
 
