@@ -1,3 +1,4 @@
+
 .wrapper {
   position: absolute;
   top: 12%;
@@ -95,6 +96,7 @@
 .menu.active {
   opacity: 1; }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -105,37 +107,41 @@ body {
   background: #dee2e6; }
 
 nav {
-  background: black;
+  background: #000000;
   height: 60px;
   display: flex;
   justify-content: center;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px; }
   nav img {
     width: 30px; }
   nav ul {
     list-style: none;
+    height: 50px;
     display: flex;
+
+    justify-content: center; 
+    visibility: hidden; }
     flex-direction: column;
     align-items: center; }
+
     nav ul li {
       display: block;
       padding: 0 10px; }
       nav ul li a {
         font-size: 12px;
         text-decoration: none;
-        color: white; }
-      nav ul li .basket img {
-        width: 10px; }
+        color: #ffffff; }
 
 header {
   width: 100%;
   height: 100px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: #242424;
   margin-bottom: 20px; }
   header h1, header h2 {
@@ -166,15 +172,15 @@ header {
       transform: scale(1);
       transition: transform 0.5s;
       position: relative;
+      font-size: 100px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      font-size: 100px; }
+      align-items: center; }
     .slider .slides -webkit-scrollbar {
       width: 10px;
       height: 10px; }
     .slider .slides -webkit-scrollbar-thumb {
-      background: black;
+      background: #000000;
       border-radius: 10px; }
     .slider .slides -webkit-scrollbar-track {
       background: transparent; }
@@ -189,7 +195,7 @@ header {
     display: inline-flex;
     width: 1.5rem;
     height: 1.5rem;
-    background: white;
+    background: #ffffff;
     text-decoration: none;
     align-items: center;
     justify-content: center;
@@ -199,10 +205,10 @@ header {
   .slider a:active {
     top: 1px; }
   .slider a:focus {
-    background: #000; }
+    background: #000000; }
 
 .author-info {
-  background: rgba(0, 0, 0, 0.75);
+  background: #000000;
   color: white;
   padding: 0.75rem;
   text-align: center;
@@ -213,33 +219,30 @@ header {
   margin: 0; }
 
 .author-info a {
-  color: white; }
+  color: #ffffff; }
 
 section {
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin-top: 20px; }
   section h1 {
     width: 100%;
     height: 100px;
     text-align: center;
     line-height: 100px;
-    background: white; }
+    background: #ffffff; }
   section .producthero {
-    width: 50%;
-    height: auto;
-    padding: 20px; }
+    width: 100%; }
     section .producthero img {
       width: 100%;
       display: block;
       cursor: pointer; }
   section .productcontent {
-    width: 50%; }
+    width: 100%; }
     section .productcontent p {
       line-height: 30px;
       margin: 30px; }
@@ -248,14 +251,13 @@ footer {
   position: relative;
   height: 100px;
   width: 100%;
-  background: black;
-  color: white;
+  background: #000000;
+  color: #ffffff;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px; }
+  flex-direction: row;
+  padding: 0 20px; }
   footer .contactinfo {
     width: 50%;
     display: flex;
@@ -278,26 +280,51 @@ footer {
       border-radius: 50%; }
     footer .socialmedia .fa:hover {
       opacity: 0.3; }
-    footer .socialmedia .fa-facebook {
-      background: grey;
-      color: white; }
-    footer .socialmedia .fa-twitter {
-      background: grey;
-      color: white; }
-    footer .socialmedia .fa-instagram {
-      background: grey;
-      color: white; }
+    footer .socialmedia .fa-facebook, footer .socialmedia .fa-twitter, footer .socialmedia .fa-instagram {
+      background: #808080;
+      color: #ffffff; }
 
-/* Mobile Device */
-@media only screen and (max-width: 480px) {
+/* Destop Device */
+@media only screen and (min-width: 1201px) {
+  nav {
+    background: #000000;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; }
+    nav img {
+      width: 30px; }
+    nav ul {
+      width: 100%;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      justify-content: flex-end;
+      height: 50px;
+      visibility: visible; }
+      nav ul li {
+        display: block;
+        padding: 0 10px; }
+        nav ul li a {
+          font-size: 12px;
+          text-decoration: none;
+          color: white; }
   section {
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 20px; }
     section .producthero {
-      width: 100%; }
+      width: 50%;
+      height: auto;
+      padding: 20px; }
     section .productcontent {
-      width: 100%; } }
+      width: 50%; } }
