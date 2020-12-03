@@ -1,3 +1,100 @@
+.wrapper {
+  position: absolute;
+  top: 12%;
+  left: 72%;
+  transform: translate(-50%, -50%); }
+  .wrapper .container {
+    width: 100px; }
+    .wrapper .container .hamburger-btn {
+      width: 33px;
+      height: 33px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      margin: 0 auto;
+      cursor: pointer;
+      position: relative; }
+      .wrapper .container .hamburger-btn .two {
+        position: absolute;
+        top: 45%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+      .wrapper .container .hamburger-btn .one {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+      .wrapper .container .hamburger-btn .three {
+        position: absolute;
+        top: 65%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+
+.menu {
+  width: 140px;
+  height: auto;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+  top: 10px;
+  left: -19%;
+  transition: all 0.5s linear; }
+  .menu li {
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s linear; }
+    .menu li a {
+      padding: 10px;
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      color: black;
+      transition: all 0.2s linear; }
+    .menu li a:hover {
+      color: black;
+      font-weight: bold; }
+  .menu li:hover {
+    background: #80ddd2; }
+
+.menu::before {
+  content: "";
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  transform: translate(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent; }
+
+.hamburger-btn.active .one {
+  transform: rotate(45deg);
+  top: 45%;
+  left: 50%; }
+
+.hamburger-btn.active .two {
+  opacity: 0; }
+
+.hamburger-btn.active .three {
+  transform: rotate(-45deg);
+  top: 45%;
+  left: 50%; }
+
+.menu.active {
+  opacity: 1; }
+
 * {
   margin: 0;
   padding: 0;
@@ -21,9 +118,7 @@ nav {
   nav ul {
     list-style: none;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    height: 50px;
+    flex-direction: column;
     align-items: center; }
     nav ul li {
       display: block;
