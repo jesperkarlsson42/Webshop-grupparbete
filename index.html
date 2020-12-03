@@ -10,30 +10,49 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/main.js"></script>
+    <script src="./js/dropdown.js"></script>
     <script
       src="https://kit.fontawesome.com/0435225707.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;500&display=swap"
       rel="stylesheet"
     />
     <link href="CSS/main.css" rel="stylesheet" />
-    
   </head>
   <body>
     <!--Nav-->
     <nav>
-      <img src="IMG/logo-watchout.svg">
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./html/products.html">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class = "basket"><img src="IMG/basket-icon.png"></li>
+      <img src="IMG/logo-watchout.svg" />
+      <div class="wrapper">
+        <div class="container">
+          <div class="hamburger-btn">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+          </div>
+          <div class="menu">
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./html/products.html">Products</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ul class="logo">
+        <li class="basket"><img src="IMG/basket-icon.png" /></li>
       </ul>
     </nav>
 
@@ -43,30 +62,29 @@
       <h2>Watching with watches</h2>
     </header>
 
-    <!--Caurosel Slides-->    
+    <!--Caurosel Slides-->
     <div class="slider">
-
       <a href="#slide-1">1</a>
       <a href="#slide-2">2</a>
       <a href="#slide-3">3</a>
       <a href="#slide-4">4</a>
       <a href="#slide-5">5</a>
-    
+
       <div class="slides">
         <div id="slide-1">
-          <img src="IMG/slide1.jpg">
+          <img src="IMG/slide1.jpg" />
         </div>
         <div id="slide-2">
-          <img src="IMG/slide2.jpg">
+          <img src="IMG/slide2.jpg" />
         </div>
         <div id="slide-3">
-          <img src="IMG/slide3.jpg">
+          <img src="IMG/slide3.jpg" />
         </div>
         <div id="slide-4">
-          <img src="IMG/slide4.jpg">
+          <img src="IMG/slide4.jpg" />
         </div>
         <div id="slide-5">
-          <img src="IMG/slide5.jpg">
+          <img src="IMG/slide5.jpg" />
         </div>
       </div>
     </div>
@@ -75,16 +93,20 @@
     <section>
       <h1>Check it out</h1>
       <div class="producthero">
-        <img src="IMG/producthero.jpg">
+        <img src="IMG/producthero.jpg" />
       </div>
       <div class="productcontent">
-        <p>The WatchOut is a clean and dainty watch with a classic design that will never go out of style. 
-          A good friend to have with you as you discover the world. 
-          The watch's movement is made in Japan, guaranteeing high quality and precision.
+        <p>
+          The WatchOut is a clean and dainty watch with a classic design that
+          will never go out of style. A good friend to have with you as you
+          discover the world. The watch's movement is made in Japan,
+          guaranteeing high quality and precision.
         </p>
-        <p>Come in, the water’s fine. The WatchOut is a classy watch that suits all occasions. 
-          A genuine attention to detail is reflected throughout the WatchOut, 
-          not least in its unusual and well-thought-through placement of the date window and its exclusive laser-etched case.
+        <p>
+          Come in, the water’s fine. The WatchOut is a classy watch that suits
+          all occasions. A genuine attention to detail is reflected throughout
+          the WatchOut, not least in its unusual and well-thought-through
+          placement of the date window and its exclusive laser-etched case.
         </p>
       </div>
     </section>
