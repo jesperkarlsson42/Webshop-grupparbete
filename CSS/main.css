@@ -1,6 +1,20 @@
 /*Background*/
 /*Font*/
 /*Padding, Margin*/
+
+
+.payment-container {
+  min-width: 500px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px; }
+  .payment-container .card {
+    width: 100%; }
+  .payment-container .expiration {
+    width: 50%; }
+
+
 * {
   margin: 0;
   padding: 0;

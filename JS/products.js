@@ -7,6 +7,7 @@ class Product {
   }
 }
 
+
 let products = [];
 let cartProducts = [];
 
@@ -82,6 +83,7 @@ function addProduct() {
 }
 
 function createProduct() {
+
   $.each(products, (i, product) => {
     console.log(product);
 
@@ -94,6 +96,7 @@ function createProduct() {
       .attr("id", "AddToCartButton")
       .appendTo(container);
     addToCartButtons.on("click", { p: product }, clickedAddToCart);
+
 
     container.appendTo($("#product-container"));
   });
@@ -123,10 +126,12 @@ function createShoppingCart() {
     // payButton.on("click", { p: product }, clickedAddToCart);
 
     shoppingCartContainer.appendTo($("#shoppingCart-container"));
+
   });
 }
 
 function clickedAddToCart(e) {
+
   cartProducts.push(e.data.p);
 
   console.log(e.data.p);

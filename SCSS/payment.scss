@@ -1,0 +1,18 @@
+
+.payment-container {
+    min-width: 500px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+
+    .card {
+        width: 100%;
+    }
+    .expiration {
+        width: 50%;
+    }
+    
+}
+
