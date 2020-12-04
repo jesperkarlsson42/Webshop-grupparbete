@@ -1,7 +1,6 @@
 /*Background*/
 /*Font*/
 /*Padding, Margin*/
-
 * {
   margin: 0;
   padding: 0;
@@ -42,8 +41,6 @@ nav {
     align-items: center; }
 
 /*Hamburger*/
-
-
 .wrapper {
   position: absolute;
   top: 13px;
