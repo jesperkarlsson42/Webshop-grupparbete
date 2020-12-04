@@ -2,6 +2,7 @@
 /*Font*/
 /*Padding, Margin*/
 
+
 .payment-container {
   min-width: 500px;
   max-width: 600px;
@@ -54,8 +55,6 @@ nav {
     align-items: center; }
 
 /*Hamburger*/
-
-
 .wrapper {
   position: absolute;
   top: 13px;
