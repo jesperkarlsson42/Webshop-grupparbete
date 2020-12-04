@@ -1,0 +1,340 @@
+/*Background*/
+/*Font*/
+/*Padding, Margin*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif; }
+
+body {
+  background: #dee2e6; }
+
+nav {
+  background: #000000;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative; }
+  nav #logotype {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  nav img {
+    width: 30px;
+    margin-right: 20px; }
+  nav ul.desktop-menu {
+    list-style: none;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+/*Hamburger*/
+
+
+.wrapper {
+  position: absolute;
+  top: 13px;
+  left: 0; }
+  .wrapper .container {
+    width: 75px; }
+    .wrapper .container .hamburger-btn {
+      width: 33px;
+      height: 33px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      margin: 0 auto;
+      cursor: pointer;
+      position: relative; }
+      .wrapper .container .hamburger-btn .two {
+        position: absolute;
+        top: 45%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+      .wrapper .container .hamburger-btn .one {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+      .wrapper .container .hamburger-btn .three {
+        position: absolute;
+        top: 65%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+
+.wrapper .hamburger-btn.active .one {
+  transform: rotate(45deg);
+  top: 45%;
+  left: 25%;
+  position: absolute; }
+
+.wrapper .hamburger-btn.active .two {
+  opacity: 0; }
+
+.wrapper .hamburger-btn.active .three {
+  transform: rotate(-45deg);
+  top: 45%;
+  left: 25%; }
+
+.menu {
+  width: 140px;
+  height: auto;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+  top: 10px;
+  left: -19%;
+  transition: all 0.5s linear; }
+  .menu li {
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s linear; }
+    .menu li a {
+      padding: 10px;
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      color: black;
+      transition: all 0.2s linear;
+      text-decoration: none; }
+    .menu li a:hover {
+      color: black;
+      font-weight: bold; }
+  .menu li:hover {
+    background: #80ddd2; }
+
+.menu::before {
+  content: "";
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  transform: translate(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent; }
+
+.menu.active {
+  opacity: 1; }
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #242424;
+  margin-bottom: 20px; }
+  header h1, header h2 {
+    color: silver;
+    text-align: center; }
+  header h2 {
+    font-size: 20px; }
+
+.slider {
+  width: 100%;
+  text-align: center;
+  overflow: hidden; }
+  .slider .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; }
+    .slider .slides div {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 300px;
+      height: 300px;
+      margin-right: 50px;
+      border-radius: 10px;
+      background: #eee;
+      transform-origin: center center;
+      transform: scale(1);
+      transition: transform 0.5s;
+      position: relative;
+      font-size: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .slider .slides -webkit-scrollbar {
+      width: 10px;
+      height: 10px; }
+    .slider .slides -webkit-scrollbar-thumb {
+      background: #000000;
+      border-radius: 10px; }
+    .slider .slides -webkit-scrollbar-track {
+      background: transparent; }
+  .slider img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .slider a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #ffffff;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0 0.5rem 0;
+    position: relative; }
+  .slider a:active {
+    top: 1px; }
+  .slider a:focus {
+    background: #000000; }
+
+.author-info {
+  background: #000000;
+  color: white;
+  padding: 0.75rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0; }
+
+.author-info a {
+  color: #ffffff; }
+
+section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px; }
+  section h1 {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background: #ffffff; }
+  section .producthero {
+    width: 100%; }
+    section .producthero img {
+      width: 100%;
+      display: block;
+      cursor: pointer; }
+  section .productcontent {
+    width: 100%; }
+    section .productcontent p {
+      line-height: 30px;
+      margin: 30px; }
+
+footer {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 20px; }
+  footer .contactinfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+    footer .contactinfo p {
+      font-size: 12px; }
+  footer .socialmedia {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; }
+    footer .socialmedia .fa {
+      padding: 10px;
+      font-size: 20px;
+      width: 40px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 5px;
+      border-radius: 50%; }
+    footer .socialmedia .fa:hover {
+      opacity: 0.3; }
+    footer .socialmedia .fa-facebook, footer .socialmedia .fa-twitter, footer .socialmedia .fa-instagram {
+      background: #808080;
+      color: #ffffff; }
+
+/* Destop Device */
+@media only screen and (min-width: 1201px) {
+  nav {
+    background: #000000;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; }
+    nav img {
+      width: 30px; }
+    nav ul.desktop-menu {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      justify-content: flex-start;
+      height: 50px;
+      visibility: visible;
+      padding: 0 20px; }
+      nav ul.desktop-menu li {
+        display: block;
+        padding: 0 10px;
+        list-style: none; }
+        nav ul.desktop-menu li a {
+          font-size: 12px;
+          text-decoration: none;
+          color: #ffffff; }
+  .wrapper {
+    visibility: hidden; }
+  section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px; }
+    section .producthero {
+      width: 50%;
+      height: auto;
+      padding: 20px; }
+    section .productcontent {
+      width: 50%; } }
