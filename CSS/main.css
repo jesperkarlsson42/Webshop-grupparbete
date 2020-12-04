@@ -1,4 +1,6 @@
-
+/*Background*/
+/*Font*/
+/*Padding, Margin*/
 .wrapper {
   position: absolute;
   top: 12%;
@@ -96,7 +98,6 @@
 .menu.active {
   opacity: 1; }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -121,12 +122,12 @@ nav {
     list-style: none;
     height: 50px;
     display: flex;
-
-    justify-content: center; 
-    visibility: hidden; }
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    display: flex;
     flex-direction: column;
     align-items: center; }
-
     nav ul li {
       display: block;
       padding: 0 10px; }

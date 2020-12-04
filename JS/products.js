@@ -8,6 +8,10 @@ class Product {
 }
 
 $(function () {
+  createProduct();
+});
+
+function createProduct() {
   let p1 = new Product(
     "R1",
     "Rolex",
@@ -75,23 +79,19 @@ $(function () {
     console.log(product);
 
     let container = $("<div>").addClass("product").attr("id", product.id);
-    container.on("click", { p: product }, clickedProduct);
 
+    $("<div>").addClass("image").html(product.image).appendTo(container);
     $("<h3>").html(product.name).appendTo(container);
-    $("<h4>").html(product.price).appendTo(container);
-    $("<p>")
-      .last()
-      // .attr("src", "./../img/slide1.jpg")
-      // .attr("alt", "Picture of a Watch")
-      .html(product.image)
+    $("<p>").html(product.price).appendTo(container);
+    let addToCartButtons = $("<button>Add to Cart</button>")
+      .attr("id", "AddToCartButton")
       .appendTo(container);
+    addToCartButtons.on("click", { p: product }, clickedAddToCart);
 
     container.appendTo($("section"));
   });
-});
+}
 
-function clickedProduct(e) {
-  console.log("Du klickade på:", $(this).attr("id"));
-
+function clickedAddToCart(e) {
   console.log(e.data.p);
 }

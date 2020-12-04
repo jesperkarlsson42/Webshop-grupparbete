@@ -29,7 +29,8 @@ section {
   flex-wrap: wrap;
   justify-content: space-evenly; }
   section div {
-    text-align: center; }
+    text-align: center;
+    margin: 10px; }
     section div img {
       width: 150px;
       height: 200px; }
