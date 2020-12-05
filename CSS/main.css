@@ -1,6 +1,8 @@
 /*Background*/
 /*Font*/
 /*Padding, Margin*/
+
+
 .payment-container {
   min-width: 500px;
   max-width: 600px;
@@ -11,6 +13,7 @@
     width: 100%; }
   .payment-container .expiration {
     width: 50%; }
+
 
 * {
   margin: 0;
