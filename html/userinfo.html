@@ -9,9 +9,8 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/dropdown.js"></script>
-    <link href="CSS/main.css" rel="stylesheet"/>
+    <script src="/js/main.js"></script>
+    <script src="/js/userinfo.js"></script>
     <script
       src="https://kit.fontawesome.com/0435225707.js"
       crossorigin="anonymous"
@@ -25,12 +24,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link href="CSS/main.css" rel="stylesheet" />
+    <link href="/CSS/main.css" rel="stylesheet" />
+    <link href="/CSS/userinfo.css" rel="stylesheet" />
   </head>
   <body>
     <!--Nav-->
     <nav>
-      <img src="IMG/logo-watchout.svg" id="logotype" />
+      <img src="/IMG/logo-watchout.svg" id="logotype" />
 
       <!--hamburger Dropdown-->
       <div class="wrapper">
@@ -57,10 +57,10 @@
       <ul class="desktop-menu">
         <li><a href="/index.html">Home</a></li>
         <li><a href="./html/products.html">Products</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="/index.html">About</a></li>
         <li><a href="#footer">Contact</a></li>
       </ul>
-      <img src="IMG/basket-icon.png"></li>
+      <img src="/IMG/basket-icon.png"></li>
     </nav>
 
     <!--Header - Name, Slogan-->
@@ -68,59 +68,47 @@
       <h1>WatchOut</h1>
       <h2>Watching with watches</h2>
     </header>
-
-    <!--Caurosel Slides-->
-    <div class="slider">
-      <a href="#slide-1">1</a>
-      <a href="#slide-2">2</a>
-      <a href="#slide-3">3</a>
-      <a href="#slide-4">4</a>
-      <a href="#slide-5">5</a>
-
-      <div class="slides">
-        <div id="slide-1">
-          <img src="IMG/slide1.jpg" />
-        </div>
-        <div id="slide-2">
-          <img src="IMG/slide2.jpg" />
-        </div>
-        <div id="slide-3">
-          <img src="IMG/slide3.jpg" />
-        </div>
-        <div id="slide-4">
-          <img src="IMG/slide4.jpg" />
-        </div>
-        <div id="slide-5">
-          <img src="IMG/slide5.jpg" />
-        </div>
-      </div>
-    </div>
-
-
+      
     <!--Context Section-->
-    <section id = "about">
-      <h1>Check it out</h1>
-      <div class="producthero">
-        <a href="./html/products.html">
-          <img src="IMG/producthero.jpg" />
-        </a>
-      </div>
-      <div class="productcontent">
-        <p>
-          The WatchOut is a clean and dainty watch with a classic design that
-          will never go out of style. A good friend to have with you as you
-          discover the world. The watch's movement is made in Japan,
-          guaranteeing high quality and precision.
-        </p>
-        <p>
-          Come in, the water’s fine. The WatchOut is a classy watch that suits
-          all occasions. A genuine attention to detail is reflected throughout
-          the WatchOut, not least in its unusual and well-thought-through
-          placement of the date window and its exclusive laser-etched case.
-        </p>
+    <section>
+      
+
+      <div id = "userinfo-container">
+        <form id = "userform">
+            <h1>Customer information</h1>
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email"><br>
+
+            <div class="name-holder">
+                <div class = "fname">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname" value=""><br>
+                </div>
+                <div class = "lname">
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname" value=""><br>
+                </div>
+            </div>
+
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" value=""><br>
+
+            <div class="post-holder">
+                <div class = "post">
+                    <label for="post">Postcode:</label><br>
+                    <input type="text" id="post" name="post" value=""><br>
+                </div>
+                <div class = "town">
+                    <label for="town">Town:</label><br>
+                    <input type="text" id="post" name="town" value=""><br>
+                </div>
+            </div>
+
+            <button id = "save">Save</button>
+          </form> 
       </div>
     </section>
-
+      
     <!--Footer - Contact info, Social Media-->
     <footer id = "footer">
       <div class="contactinfo">
