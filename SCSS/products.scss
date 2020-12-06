@@ -30,6 +30,10 @@ nav {
   }
 }
 
+#opener {
+  margin-right: 300px;
+}
+
 section {
   display: flex;
   flex-direction: row;
@@ -46,6 +50,12 @@ section {
       cursor: pointer;
     }
   }
+}
+
+#total {
+  width: 200px;
+  height: 200px;
+  color: black;
 }
 
 footer {
