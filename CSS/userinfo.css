@@ -1,0 +1,78 @@
+/*Background*/
+/*Font*/
+/*Padding, Margin*/
+#userinfo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #userinfo-container h1 {
+    line-height: 30px;
+    padding-top: 20px; }
+  #userinfo-container #userform {
+    width: 80%;
+    background: #ffffff;
+    margin: 20px;
+    padding: 0 20px;
+    padding-bottom: 20px; }
+    #userinfo-container #userform input {
+      width: 100%;
+      height: 45px;
+      display: block;
+      padding: 5px;
+      border: none;
+      background: #dee2e6; }
+    #userinfo-container #userform button {
+      width: 100px;
+      height: 42px;
+      border: none;
+      background: #242424;
+      color: #ffffff;
+      float: right; }
+
+@media only screen and (min-width: 1201px) {
+  #userinfo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #userinfo-container #userform {
+      width: 45%;
+      background: #ffffff;
+      margin: 20px;
+      padding: 0 60px;
+      padding-bottom: 20px; }
+      #userinfo-container #userform input {
+        width: 100%;
+        height: 45px;
+        display: block;
+        padding: 5px;
+        border: none;
+        background: #dee2e6; }
+      #userinfo-container #userform .name-holder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between; }
+        #userinfo-container #userform .name-holder .fname, #userinfo-container #userform .name-holder .lname {
+          width: 49%;
+          padding: 0;
+          margin: 0; }
+      #userinfo-container #userform .post-holder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between; }
+        #userinfo-container #userform .post-holder .post, #userinfo-container #userform .post-holder .town {
+          width: 49%;
+          padding: 0;
+          margin: 0; }
+      #userinfo-container #userform button {
+        width: 100px;
+        height: 42px;
+        border: none;
+        background: #242424;
+        color: #ffffff;
+        float: right; } }
