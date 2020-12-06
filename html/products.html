@@ -9,6 +9,7 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
+    <script src="./../jquery-ui-1.12.1/jquery-ui.js"></script>
     <script src="./../js/products.js"></script>
     <script src="./../js/dropdown.js"></script>
     <script
@@ -24,13 +25,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link href="./../jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
+    <link href="./../jquery-ui-1.12.1/jquery-ui.theme.css" rel="stylesheet" />
     <link href="./../css/main.css" rel="stylesheet" />
     <link href="./../css/products.css" rel="stylesheet" />
   </head>
   <body>
     <!--Nav-->
     <nav>
-
       <img src="./../img/logo-watchout.svg" id="logotype" />
       <div class="wrapper">
         <div class="container">
@@ -49,25 +51,36 @@
           </div>
         </div>
       </div>
-      <ul class="logo">
-        <li class="basket"><img src="./../img/basket-icon.png" /></li>
-      </ul>
-      
+      <ul class="logo"></ul>
+
       <ul>
         <li><a href="./index.html">Home</a></li>
         <li><a href="./html/products.html">Products</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#footer">Contact</a></li>
       </ul>
-      <img src="./../img/basket-icon.png"></li>
+      
+      <div id="dialog" title="Your Shopping Cart">
+        <p>
+          <section id="shoppingCart-container"></section>
+
+          <div id="total">
+            <div id="totalPrice"></div>
+          </div>
+        </p>
+      </div>
+    
+
+      <button id="opener">
+        <li class="basket"><img src="./../img/basket-icon.png" /></li>
+      </button>
     </nav>
 
     <!--Header - Name, Slogan-->
-    <header>
+    <header id="header">
       <h1>WatchOut</h1>
       <h2>Watching with watches</h2>
     </header>
-    
 
     <!--Hero Image-->
     <div class="heroimage">
@@ -77,7 +90,7 @@
     <!--Product List Section-->
     <section id="product-container"></section>
 
-    <section id="shoppingCart-container"></section>
+  
 
     <!--Footer - Contact info, Social Media-->
     <footer>
