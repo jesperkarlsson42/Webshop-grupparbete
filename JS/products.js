@@ -136,7 +136,5 @@ function clickedAddToCart(e) {
 
   console.log(e.data.p);
 
-  // products.splice(i, 1);
-
   createShoppingCart();
 }
