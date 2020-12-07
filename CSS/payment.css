@@ -1,10 +1,88 @@
-.payment-container {
-  min-width: 500px;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px; }
-  .payment-container .card {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: lightgrey; }
+  body .payment-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    background-color: #fff;
+    padding: 45px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+  body h1 {
+    text-align: center;
+    margin: 0 0 40px;
+    padding: 0;
+    color: black;
+    letter-spacing: 2px; }
+  body h2 {
+    margin: 0 0 20px;
+    padding: 0;
+    color: black;
+    letter-spacing: 2px;
+    font-size: 14px; }
+  body input {
+    padding: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #999; }
+  body button {
+    border-radius: 25px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    background: lightgrey;
+    color: #fff;
+    margin-bottom: 0; }
+  body button:hover {
+    background: green; }
+  body .card {
     width: 100%; }
-  .payment-container .expiration {
+  body .expiration {
     width: 50%; }
+
+.payment-container form div {
+  position: relative; }
+
+.payment-container form div label {
+  position: absolute;
+  top: 3px;
+  pointer-events: none;
+  left: 0;
+  transition: 0.5s; }
+
+.payment-container input:focus ~ label,
+.payment-container input:valid ~ label {
+  left: 0;
+  top: -20px;
+  color: blue;
+  font-size: 12px;
+  font-weight: bold; }
+
+.payment-container input:focus,
+.payment-container input:valid {
+  border-bottom: 2px solid blue; }
+
+::-webkit-input-placeholder {
+  text-align: right; }
+
+input:-moz-placeholder {
+  text-align: right; }
+
+.errorFirstName {
+  color: red; }
+
+.errorLastName {
+  color: red; }
+
+.errorCardNumber {
+  color: red; }
