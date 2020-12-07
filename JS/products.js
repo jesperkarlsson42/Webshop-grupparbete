@@ -7,7 +7,6 @@ class Product {
   }
 }
 
-
 let products = [];
 let cartProducts = [];
 
@@ -89,10 +88,6 @@ $(function () {
     },
   });
 
-  // $("#opener").on("click", function () {
-  //   $("#dialog").toggle(1000).dialog("open");
-  // });
-
   $("#opener").on("click", function () {
     if (!$("#dialog").dialog("isOpen")) {
       $("#dialog").dialog("open");
@@ -107,7 +102,6 @@ function addProduct() {
 }
 
 function createProduct() {
-
   $.each(products, (i, product) => {
     console.log(product);
 
@@ -121,7 +115,6 @@ function createProduct() {
       .appendTo(container);
     addToCartButtons.on("click", { p: product }, clickedAddToCart);
 
-
     container.appendTo($("#product-container"));
   });
 }
@@ -132,7 +125,7 @@ function createShoppingCart() {
   shoppingcart.innerHTML = "";
 
   $.each(cartProducts, (i, cartProduct) => {
-    console.log(cartProducts);
+    console.log(cartProduct);
 
     let shoppingCartContainer = $("<div>")
       .addClass("Cartproduct")
@@ -144,18 +137,16 @@ function createShoppingCart() {
       .appendTo(shoppingCartContainer);
     $("<h3>").html(cartProduct.name).appendTo(shoppingCartContainer);
     $("<p>").html(cartProduct.price).appendTo(shoppingCartContainer);
-    let payButton = $("<button>Pay</button>")
-      .attr("id", "payButton")
+    let deleteButton = $("<button>Delete</button>")
+      .attr("id", "deleteButton")
       .appendTo(shoppingCartContainer);
-    // payButton.on("click", { p: product }, clickedAddToCart);
+    deleteButton.on("click", { p: cartProduct }, deleteCartProduct);
 
     shoppingCartContainer.appendTo($("#shoppingCart-container"));
-
   });
 }
 
 function clickedAddToCart(e) {
-
   cartProducts.push(e.data.p);
 
   console.log(e.data.p);
@@ -164,7 +155,39 @@ function clickedAddToCart(e) {
   updateCartTotalPrice();
 }
 
-// uppdaterar varukorgens totalpris
+// function deleteCartProduct(e) {
+//   $.each(cartProducts, (i, p) => {
+//     $(".product").html(e.data.p);
+//     console.log(e.data.p);
+//     let removed = cartProducts.splice(i, 1);
+//     console.log(cartProducts);
+//     console.log(removed);
+//   });
+//   createShoppingCart();
+// }
+
+function deleteCartProduct(e) {
+  $.each(cartProducts, (i, p) => {
+    if (cartProducts[i].name == p.name) {
+      console.log(e.data.p);
+      let removed = cartProducts.splice(i, 1);
+      console.log(cartProducts);
+      console.log(removed);
+    }
+  });
+  createShoppingCart();
+}
+
+// function deleteTodo(todo) {
+//   for (let i = 0; i < todos.length; i++) {
+//     if (todos[i].name == todo.name) {
+//       todos.splice(i, 1);
+//     }
+//     createHTML();
+//     addToLocalStorage(todos);
+//   }
+// }
+
 function updateCartTotalPrice() {
   let listOfTotal = [];
 
