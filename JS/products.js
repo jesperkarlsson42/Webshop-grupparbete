@@ -75,7 +75,31 @@ let p10 = new Product(
 $(function () {
   addProduct();
   createProduct();
-  // createShoppingCart();
+
+  $("#dialog").dialog({
+    autoOpen: false,
+    position: { my: "right top", at: "right top", of: window },
+    show: {
+      effect: "blind",
+      duration: 1000,
+    },
+    hide: {
+      effect: "blind",
+      duration: 1000,
+    },
+  });
+
+  // $("#opener").on("click", function () {
+  //   $("#dialog").toggle(1000).dialog("open");
+  // });
+
+  $("#opener").on("click", function () {
+    if (!$("#dialog").dialog("isOpen")) {
+      $("#dialog").dialog("open");
+    } else {
+      $("#dialog").dialog("close");
+    }
+  });
 });
 
 function addProduct() {
@@ -136,7 +160,30 @@ function clickedAddToCart(e) {
 
   console.log(e.data.p);
 
-  // products.splice(i, 1);
-
   createShoppingCart();
+  updateCartTotalPrice();
+}
+
+// uppdaterar varukorgens totalpris
+function updateCartTotalPrice() {
+  let listOfTotal = [];
+
+  for (let p = 0; p < cartProducts.length; p++) {
+    total = parseInt(cartProducts[p].price);
+
+    listOfTotal.push(total);
+
+    console.log(listOfTotal);
+  }
+
+  let totalSum = listOfTotal.reduce(function (a, b) {
+    return a + b;
+  }, 0);
+
+  let totalSum2 = totalSum;
+  totalSum = "Total Price: " + totalSum + ":-";
+
+  document.getElementById("totalPrice").innerHTML = totalSum;
+  console.log(totalSum2);
+  return totalSum2;
 }

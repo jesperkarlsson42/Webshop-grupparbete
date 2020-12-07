@@ -1,0 +1,76 @@
+@import 'variables';
+@import 'mixins';
+
+#userinfo-container {
+    width: 100%;
+    @include default-flex;
+
+    h1 {
+        line-height: 30px;
+        padding-top: 20px;
+    }
+
+    #userform {
+        width: 80%;
+        background: #ffffff;
+        margin: 20px;
+        padding: 0 20px;
+        padding-bottom: 20px;
+
+        input {
+            width: 100%;
+            height: 45px;
+            display: block;
+            padding: 5px;
+            border: none;
+            background: $bg-body;  
+        }
+
+        button {
+            width: 100px;
+            height: 42px;
+            border: none;
+            background: $bg-head;
+            color: $font-white;
+            float: right;
+        }
+    }
+
+}
+
+/* Destop Device */
+@media only screen and (min-width: 1201px) {
+    #userinfo-container {
+
+        #userform {
+            width: 45%;
+            margin: 20px;
+            padding: 0 60px;
+            padding-bottom: 20px;
+
+                .name-holder {
+                    width: 100%;
+                    @include default-flex;
+                    justify-content: space-between;
+
+                    .fname, .lname {
+                        width: 49%;
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+
+                .post-holder {
+                    width: 100%;
+                    @include default-flex;
+                    justify-content: space-between;
+
+                    .post, .town {
+                        width: 49%;
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+        }
+    }
+}

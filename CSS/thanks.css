@@ -1,0 +1,11 @@
+.thanks {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px; }
+  .thanks h1 {
+    margin: 10px; }
+  .thanks p {
+    margin: 10px; }
+  .thanks a {
+    margin: 10px; }
