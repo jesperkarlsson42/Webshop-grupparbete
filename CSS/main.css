@@ -76,7 +76,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: "Montserrat", sans-serif; }
 
 body {
   background: #dee2e6; }
@@ -219,7 +219,8 @@ header {
   flex-direction: column;
   background: #242424;
   margin-bottom: 20px; }
-  header h1, header h2 {
+  header h1,
+  header h2 {
     color: silver;
     text-align: center; }
   header h2 {
@@ -355,7 +356,9 @@ footer {
       border-radius: 50%; }
     footer .socialmedia .fa:hover {
       opacity: 0.3; }
-    footer .socialmedia .fa-facebook, footer .socialmedia .fa-twitter, footer .socialmedia .fa-instagram {
+    footer .socialmedia .fa-facebook,
+    footer .socialmedia .fa-twitter,
+    footer .socialmedia .fa-instagram {
       background: #808080;
       color: #ffffff; }
 
