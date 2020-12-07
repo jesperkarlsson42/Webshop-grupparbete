@@ -77,30 +77,31 @@
         <form id = "userform">
             <h1>Customer information</h1>
             <label for="email">Enter your email:</label>
-            <input type="email" id="email" name="email"><br>
+            <input type="email" id="email" name="email" required><br>
 
             <div class="name-holder">
                 <div class = "fname">
                     <label for="fname">First name:</label><br>
-                    <input type="text" id="fname" name="fname" value=""><br>
+                    <input pattern="[^0-9]+" type="text" id="fname" name="fname" value="" required><br>
                 </div>
                 <div class = "lname">
                     <label for="lname">Last name:</label><br>
-                    <input type="text" id="lname" name="lname" value=""><br>
+                    <input pattern="[^0-9]+" type="text" id="lname" name="lname" value="" required><br>
                 </div>
             </div>
 
             <label for="address">Address:</label><br>
-            <input type="text" id="address" name="address" value=""><br>
+            <input type="text" id="address" name="address" value="" required><br>
 
             <div class="post-holder">
                 <div class = "post">
                     <label for="post">Postcode:</label><br>
-                    <input type="text" id="post" name="post" value=""><br>
+                    <input pattern="\d*" type="text" id="post" name="post" value="" required>
+                    <br>
                 </div>
                 <div class = "town">
                     <label for="town">Town:</label><br>
-                    <input type="text" id="post" name="town" value=""><br>
+                    <input pattern="[^0-9]+" type="text" id="post" name="town" value="" required><br>
                 </div>
             </div>
 
