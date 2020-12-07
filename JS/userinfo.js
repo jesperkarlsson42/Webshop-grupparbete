@@ -7,22 +7,21 @@ class UserInfo {
         this.post = post;
         this.town = town;
     }
-} // create class to keep the user's value into one object
+} 
 
 $(function() {
-    $("#userform").on('submit', function(e) { // submit event
+    $("#userform").on('submit', function(e) { 
         e.preventDefault(); 
 
-        let valueArray = $(this).serializeArray(); // Form as array
-        // [ {name: 'email', value: 'info@info.se'}, {name: 'fname', value: 'Kani'} ]
-        // need each object out from array form
-
+        // get input value from form, as an array type
+        let valueArray = $(this).serializeArray(); // [ {name: 'email', value: 'info@info.se'}, {name: 'fname', value: 'Kani'} ]
+        
+        // Pick each key and value in array 
         let valueObject = {}
         
         $.each(valueArray, (i, element) => {  
-            valueObject[element.name] = element.value // Pick each key and value in array 
+            valueObject[element.name] = element.value 
         })
-
 
         // LocalStorage 
         localStorage.setItem("user", JSON.stringify(valueObject))
@@ -30,7 +29,10 @@ $(function() {
         let valuesFromLS = localStorage.getItem("user")
         let userValue = JSON.parse(valuesFromLS);
         
+        // Create a user in a new object
         new UserInfo(valueObject.email, valueObject.fname, valueObject.lname, valueObject.address, valueObject.post, valueObject.town)
-        //now valueObject is key and value from the 6 input, and create new object by sending all 6 inputs' key and value
+
+        // Link to the next payment
+        window.location.href = "/html/payment.html"
     })
 })

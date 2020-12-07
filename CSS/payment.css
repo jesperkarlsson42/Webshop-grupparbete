@@ -1,9 +1,9 @@
-body {
+#paymentbody {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: lightgrey; }
-  body .payment-container {
+  #paymentbody .payment-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -14,37 +14,41 @@ body {
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-    body .payment-container h1 {
-      text-align: center;
-      margin: 0 0 40px;
-      padding: 0;
-      color: black;
-      letter-spacing: 2px; }
-    body .payment-container h2 {
-      margin: 0 0 20px;
-      padding: 0;
-      color: black;
-      letter-spacing: 2px;
-      font-size: 14px; }
-    body .payment-container input {
-      padding: 5px;
-      margin-bottom: 30px;
-      width: 100%;
-      box-sizing: border-box;
-      box-shadow: none;
-      outline: none;
-      border: none;
-      border-bottom: 2px solid #999; }
-    body .payment-container button {
-      border-radius: 25px;
-      height: 40px;
-      width: 100%;
-      cursor: pointer;
-      background: lightgrey;
-      color: #fff;
-      margin-bottom: 0; }
-    body .payment-container button:hover {
-      background: green; }
+  #paymentbody h1 {
+    text-align: center;
+    margin: 0 0 40px;
+    padding: 0;
+    color: black;
+    letter-spacing: 2px; }
+  #paymentbody h2 {
+    margin: 0 0 20px;
+    padding: 0;
+    color: black;
+    letter-spacing: 2px;
+    font-size: 14px; }
+  #paymentbody input {
+    padding: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #999; }
+  #paymentbody button {
+    border-radius: 25px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    background: lightgrey;
+    color: #fff;
+    margin-bottom: 0; }
+  #paymentbody button:hover {
+    background: green; }
+  #paymentbody .card {
+    width: 100%; }
+  #paymentbody .expiration {
+    width: 50%; }
 
 .payment-container form div {
   position: relative; }

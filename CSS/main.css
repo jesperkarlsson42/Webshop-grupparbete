@@ -1,13 +1,12 @@
 /*Background*/
 /*Font*/
 /*Padding, Margin*/
-<<<<<<< HEAD
-body {
+#paymentbody {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: lightgrey; }
-  body .payment-container {
+  #paymentbody .payment-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,39 +17,42 @@ body {
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-    body .payment-container h1 {
-      text-align: center;
-      margin: 0 0 40px;
-      padding: 0;
-      color: black;
-      letter-spacing: 2px; }
-    body .payment-container h2 {
-      margin: 0 0 20px;
-      padding: 0;
-      color: black;
-      letter-spacing: 2px;
-      font-size: 14px; }
-    body .payment-container input {
-      padding: 5px;
-      margin-bottom: 30px;
-      width: 100%;
-      box-sizing: border-box;
-      box-shadow: none;
-      outline: none;
-      border: none;
-      border-bottom: 2px solid #999; }
-    body .payment-container button {
-      border-radius: 25px;
-      height: 40px;
-      width: 100%;
-      cursor: pointer;
-      background: lightgrey;
-      color: #fff;
-      margin-bottom: 0; }
-    body .payment-container button:hover {
-      background: green; }
+  #paymentbody h1 {
+    text-align: center;
+    margin: 0 0 40px;
+    padding: 0;
+    color: black;
+    letter-spacing: 2px; }
+  #paymentbody h2 {
+    margin: 0 0 20px;
+    padding: 0;
+    color: black;
+    letter-spacing: 2px;
+    font-size: 14px; }
+  #paymentbody input {
+    padding: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #999; }
+  #paymentbody button {
+    border-radius: 25px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    background: lightgrey;
+    color: #fff;
+    margin-bottom: 0; }
+  #paymentbody button:hover {
+    background: green; }
+  #paymentbody .card {
+    width: 100%; }
+  #paymentbody .expiration {
+    width: 50%; }
 
-<<<<<<< HEAD
 .payment-container form div {
   position: relative; }
 
@@ -68,19 +70,6 @@ body {
   color: blue;
   font-size: 12px;
   font-weight: bold; }
-=======
-
-.payment-container {
-  min-width: 500px;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px; }
-  .payment-container .card {
-    width: 100%; }
-  .payment-container .expiration {
-    width: 50%; }
->>>>>>> 27986cf3b8bbba4768421f3de95a88f1c6a74837
 
 .payment-container input:focus,
 .payment-container input:valid {
@@ -100,17 +89,6 @@ input:-moz-placeholder {
 
 .errorCardNumber {
   color: red; }
-=======
-.payment-container {
-  min-width: 500px;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px; }
-  .payment-container .card {
-    width: 100%; }
-  .payment-container .expiration {
-    width: 50%; }
 
 /*Background*/
 /*Font*/
@@ -171,7 +149,6 @@ input:-moz-placeholder {
         width: 49%;
         padding: 0;
         margin: 0; } }
->>>>>>> 6c66d10ad65e631e9b4c7a8dbdf6e102bc66864b
 
 * {
   margin: 0;
@@ -179,7 +156,7 @@ input:-moz-placeholder {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif; }
 
-body {
+#paymentbody {
   background: #dee2e6; }
 
 nav {
