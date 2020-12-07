@@ -9,35 +9,29 @@ $(function () {
         let cvc = $('#cvc').val();
 
         if (fname.length <3 || fname == '') {
-            $('#form-fname').addClass('errorFirstName');
-            console.log('funkar inte');
+            $('#form-fname').addClass('errorValidator');
         }
         
         if (lname.length <3 || lname == '') {
-            $('#form-lname').addClass('errorLastName');
-            console.log('funkar inte');
+            $('#form-lname').addClass('errorValidator');
         }
 
         if (cardNumber.length < 16 || cardNumber == '' || cardNumber.length > 16) {
-            $('#cardNumber').addClass('errorCardNumber');
-            console.log('funkar inte');
+            $('#cardNumber').addClass('errorValidator');
         }
         if (month.length < 2 || month.length > 2 || month > 12) {
-            $('#month').addClass('errorCardNumber');
-            console.log('funkar inte');
+            $('#month').addClass('errorValidator');
         }
         if (year.length < 2 || year.length > 2 || year < 20) {
-            $('#year').addClass('errorCardNumber');
-            console.log('funkar inte');
+            $('#year').addClass('errorValidator');
         }
 
-        if (cvc.length < 3 || cvc.length > 3) {
-            $('#cvc').addClass('errorCardNumber');
-            console.log('funkar inte');
+        if (cvc.length < 3 || cvc.length > 3 ||!/^[0-9]+$/.test(cvc)) {
+            $('#cvc').addClass('errorValidator');
         }
 
-        else {
-
+        else {     
+            window.location.assign('./../html/thanks.html')
         }
     })
 
