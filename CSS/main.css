@@ -81,14 +81,28 @@
 input:-moz-placeholder {
   text-align: right; }
 
-.errorFirstName {
-  color: red; }
-
-.errorLastName {
+.errorValidator {
   color: red; }
 
 .errorCardNumber {
   color: red; }
+@media screen and (min-width: 600px) {
+  #paymentbody {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: lightgrey; }
+    #paymentbody .payment-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      background-color: #fff;
+      padding: 45px;
+      box-sizing: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); } }
 
 /*Background*/
 /*Font*/
@@ -154,7 +168,7 @@ input:-moz-placeholder {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: "Montserrat", sans-serif; }
 
 #paymentbody {
   background: #dee2e6; }
@@ -297,7 +311,8 @@ header {
   flex-direction: column;
   background: #242424;
   margin-bottom: 20px; }
-  header h1, header h2 {
+  header h1,
+  header h2 {
     color: silver;
     text-align: center; }
   header h2 {
@@ -433,7 +448,9 @@ footer {
       border-radius: 50%; }
     footer .socialmedia .fa:hover {
       opacity: 0.3; }
-    footer .socialmedia .fa-facebook, footer .socialmedia .fa-twitter, footer .socialmedia .fa-instagram {
+    footer .socialmedia .fa-facebook,
+    footer .socialmedia .fa-twitter,
+    footer .socialmedia .fa-instagram {
       background: #808080;
       color: #ffffff; }
 
