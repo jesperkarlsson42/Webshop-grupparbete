@@ -1,8 +1,10 @@
 let x = 0;
+let y = 1;
 
 class Product {
   constructor(name, price, image) {
     this.id = x++;
+    this.count = y;
     this.name = name;
     this.price = price;
     this.image = image;
@@ -11,6 +13,7 @@ class Product {
 
 let products = [];
 let cartProducts = [];
+let listOfTotal = [];
 
 let p1 = new Product("Rolex", 14245, "<img src='./../img/rolexsilver.jpg'/>");
 let p2 = new Product("Gant", 1145, "<img src='./../img/gantsilver.png'/>");
@@ -46,6 +49,8 @@ let p10 = new Product("Braun", 2495, "<img src='./../img/braunblack.jpg'/>");
 $(function () {
   addProduct();
   createProduct();
+  getFromLocalStorage();
+  updateCartTotalPrice();
 
   $("#dialog").dialog({
     autoOpen: false,
@@ -75,8 +80,6 @@ function addProduct() {
 
 function createProduct() {
   $.each(products, (i, product) => {
-    console.log(product);
-
     let container = $("<div>").addClass("product").attr("id", product.id);
 
     $("<div>").addClass("image").html(product.image).appendTo(container);
@@ -97,8 +100,6 @@ function createShoppingCart() {
   shoppingcart.innerHTML = "";
 
   $.each(cartProducts, (i, cartProduct) => {
-    console.log(cartProduct);
-
     let shoppingCartContainer = $("<div>")
       .addClass("cartproduct")
       .attr("id", cartProduct.id);
@@ -114,56 +115,102 @@ function createShoppingCart() {
       .appendTo(shoppingCartContainer);
     deleteButton.on("click", { c: cartProduct }, deleteCartProduct);
 
+    let counterdiv = $("<div>")
+      .addClass("counterdiv")
+      .appendTo(shoppingCartContainer);
+
+    let displayCounter = $("<div>").addClass("counter").appendTo(counterdiv);
+    $("<p>")
+      .addClass("activeCount")
+      .html(cartProduct.count)
+      .appendTo(displayCounter);
+
+    let minus = $("<button>-</button>")
+      .addClass("subbtn")
+      .on("click", { c: cartProduct }, subtractOneProduct);
+    minus.appendTo(counterdiv);
+
+    let add = $("<button>+</button>")
+      .addClass("addbtn")
+      .on("click", { c: cartProduct }, addOneProduct);
+    add.appendTo(counterdiv);
+
     shoppingCartContainer.appendTo($("#shoppingCart-container"));
   });
 }
 
+function addOneProduct(e) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id == e.data.c.id) {
+      cartProducts[i].count++;
+      createShoppingCart();
+    }
+    if (cartProducts[i].count > 1) {
+      let tempsum = cartProducts[i].count * 1;
+      let total = tempsum * parseInt(cartProducts[i].price);
+      listOfTotal.push(total);
+      updateCartTotalPrice();
+      addToLocalStorage(cartProducts);
+    } else {
+      updateCartTotalPrice();
+    }
+  }
+}
+
+function subtractOneProduct(e) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id == e.data.c.id) {
+      cartProducts[i].count--;
+    }
+    if (cartProducts[i].count < 1) {
+      cartProducts.splice(i, 1);
+    }
+    createShoppingCart();
+    updateCartTotalPrice();
+    addToLocalStorage(cartProducts);
+  }
+}
+
 function deleteCartProduct(e) {
   for (let i = 0; i < cartProducts.length; i++) {
-    $(".cartproduct").html(e.data.c);
-    console.log(e.data.c);
     if (cartProducts[i].id == e.data.c.id) {
       cartProducts.splice(i, 1);
     }
     createShoppingCart();
+    updateCartTotalPrice();
+    addToLocalStorage(cartProducts);
   }
 }
 
 function clickedAddToCart(e) {
   cartProducts.push(e.data.p);
 
-  console.log(e.data.p);
-
   createShoppingCart();
   updateCartTotalPrice();
+  addToLocalStorage(cartProducts);
 }
 
-// listOfTotal = [];
-
-// for (let p = 0; p < cartProducts.length; p++) {
-//   total = cartProducts[p].price;
-//   listOfTotal.push(total);
-// }
-
 function updateCartTotalPrice() {
-  let listOfTotal = [];
+  let sum = 0;
 
-  for (let p = 0; p < cartProducts.length; p++) {
-    total = parseInt(cartProducts[p].price);
+  $.each(cartProducts, (i, cartProduct) => {
+    sum += cartProducts[i].count * cartProducts[i].price;
+  });
 
-    listOfTotal.push(total);
+  $("#totalPrice").html("Total Price:" + " " + sum + " " + ":-");
 
-    console.log(listOfTotal);
+  return sum;
+}
+
+function addToLocalStorage(cartProducts) {
+  localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+  createShoppingCart(cartProducts);
+}
+
+function getFromLocalStorage() {
+  let cartProductFromLS = localStorage.getItem("cartProducts");
+  if (cartProductFromLS) {
+    cartProducts = JSON.parse(cartProductFromLS);
+    createShoppingCart(cartProducts);
   }
-
-  let totalSum = listOfTotal.reduce(function (a, b) {
-    return a + b;
-  }, 0);
-
-  let totalSum2 = totalSum;
-  totalSum = "Total Price: " + totalSum + ":-";
-
-  document.getElementById("totalPrice").innerHTML = totalSum;
-  console.log(totalSum2);
-  return totalSum2;
 }
