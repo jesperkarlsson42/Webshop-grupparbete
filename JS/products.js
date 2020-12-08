@@ -46,6 +46,7 @@ let p10 = new Product("Braun", 2495, "<img src='./../img/braunblack.jpg'/>");
 $(function () {
   addProduct();
   createProduct();
+  getFromLocalStorage();
 
   $("#dialog").dialog({
     autoOpen: false,
@@ -120,12 +121,14 @@ function createShoppingCart() {
 
 function deleteCartProduct(e) {
   for (let i = 0; i < cartProducts.length; i++) {
-    $(".product").html(e.data.c);
+    $(".cartproduct").html(e.data.c);
     console.log(e.data.c);
     if (cartProducts[i].id == e.data.c.id) {
       cartProducts.splice(i, 1);
     }
     createShoppingCart();
+    updateCartTotalPrice();
+    addToLocalStorage(cartProducts);
   }
 }
 
@@ -136,6 +139,7 @@ function clickedAddToCart(e) {
 
   createShoppingCart();
   updateCartTotalPrice();
+  addToLocalStorage(cartProducts);
 }
 
 // listOfTotal = [];
@@ -166,4 +170,17 @@ function updateCartTotalPrice() {
   document.getElementById("totalPrice").innerHTML = totalSum;
   console.log(totalSum2);
   return totalSum2;
+}
+
+function addToLocalStorage(cartProducts) {
+  localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+  createShoppingCart(cartProducts);
+}
+
+function getFromLocalStorage() {
+  let cartProductFromLS = localStorage.getItem("cartProducts");
+  if (cartProductFromLS) {
+    cartProducts = JSON.parse(cartProductFromLS);
+    createShoppingCart(cartProducts);
+  }
 }
