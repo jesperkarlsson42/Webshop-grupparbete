@@ -14,6 +14,8 @@ class Product {
 
 let products = [];
 let cartProducts = [];
+let listOfTotal = [];
+
 
 let p1 = new Product("Rolex", 14245, "<img src='./../img/rolexsilver.jpg'/>");
 let p2 = new Product("Gant", 1145, "<img src='./../img/gantsilver.png'/>");
@@ -140,8 +142,18 @@ function addOneProduct(e) {
     if (cartProducts[i].id == e.data.c.id) {
       cartProducts[i].count++;
       createShoppingCart();
-
     }
+    if (cartProducts[i].count > 1) {
+      let tempsum = cartProducts[i].count * 1;
+      let total = tempsum * parseInt(cartProducts[i].price);
+      listOfTotal.push(total);
+      console.log(total);
+      
+    }
+    else {
+      updateCartTotalPrice();
+    }
+    
   }
 }
 
@@ -186,8 +198,7 @@ function clickedAddToCart(e) {
 // }
 
 function updateCartTotalPrice() {
-  let listOfTotal = [];
-
+  
   for (let p = 0; p < cartProducts.length; p++) {
     total = parseInt(cartProducts[p].price);
 
@@ -202,7 +213,7 @@ function updateCartTotalPrice() {
   totalSum = "Total Price: " + totalSum + ":-";
 
   document.getElementById("totalPrice").innerHTML = totalSum;
-  console.log(totalSum2);
+  
   return totalSum2;
 }
 
