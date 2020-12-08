@@ -1,11 +1,14 @@
 let x = 0;
+let y = 1;
 
 class Product {
   constructor(name, price, image) {
     this.id = x++;
+    this.count = y;
     this.name = name;
     this.price = price;
     this.image = image;
+    
   }
 }
 
@@ -75,7 +78,6 @@ function addProduct() {
 
 function createProduct() {
   $.each(products, (i, product) => {
-    console.log(product);
 
     let container = $("<div>").addClass("product").attr("id", product.id);
 
@@ -97,7 +99,6 @@ function createShoppingCart() {
   shoppingcart.innerHTML = "";
 
   $.each(cartProducts, (i, cartProduct) => {
-    console.log(cartProduct);
 
     let shoppingCartContainer = $("<div>")
       .addClass("cartproduct")
@@ -114,25 +115,41 @@ function createShoppingCart() {
       .appendTo(shoppingCartContainer);
     deleteButton.on("click", { c: cartProduct }, deleteCartProduct);
 
+    let counterdiv = $("<div>").addClass("counterdiv").appendTo(shoppingCartContainer);
+
+    $("<input type='number'></input>").addClass("counter").appendTo(counterdiv);
+
+    let minus = $("<button>-</button>").addClass('subbtn').on('click' , function(){
+      console.log('minus en');
+    });
+    minus.appendTo(counterdiv);
+
+
+
+    $("<button>+</button>").addClass('addbtn').on('click', function(){
+      console.log('plus en');
+    }).appendTo(counterdiv);
+
+
+
     shoppingCartContainer.appendTo($("#shoppingCart-container"));
   });
 }
 
 function deleteCartProduct(e) {
   for (let i = 0; i < cartProducts.length; i++) {
-    $(".product").html(e.data.c);
+    $(".cartproduct").html(e.data.c);
     console.log(e.data.c);
     if (cartProducts[i].id == e.data.c.id) {
       cartProducts.splice(i, 1);
     }
     createShoppingCart();
+    updateCartTotalPrice();
   }
 }
 
 function clickedAddToCart(e) {
   cartProducts.push(e.data.p);
-
-  console.log(e.data.p);
 
   createShoppingCart();
   updateCartTotalPrice();
@@ -152,8 +169,6 @@ function updateCartTotalPrice() {
     total = parseInt(cartProducts[p].price);
 
     listOfTotal.push(total);
-
-    console.log(listOfTotal);
   }
 
   let totalSum = listOfTotal.reduce(function (a, b) {
