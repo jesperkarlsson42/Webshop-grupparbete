@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thanks for the purchase</title>
+    <title>WatchOut</title>
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <script src="./../js/dropdown.js"></script>
+    <script src="./../js/main.js"></script>
+    <script src="./../js/userinfo.js"></script>
     <script
       src="https://kit.fontawesome.com/0435225707.js"
       crossorigin="anonymous"
@@ -24,12 +25,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link href="./../css/main.css" rel="stylesheet" />
-    <link href="./../css/thanks.css" rel="stylesheet" />
+    <link href="./../css/userinfo.css" rel="stylesheet" />
   </head>
   <body>
     <!--Nav-->
     <nav>
-      <img src="/IMG/logo-watchout.svg" id="logotype" />
+      <img src="./../img/logo-watchout.svg" id="logotype" />
 
       <!--hamburger Dropdown-->
       <div class="wrapper">
@@ -42,8 +43,8 @@
             </div>
             <div class="menu">
               <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./html/products.html">Products</a></li>
+                <li><a href="./../index.html">Home</a></li>
+                <li><a href="./../html/products.html">Products</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
@@ -54,12 +55,12 @@
 
       <!--Menu, Destop-->
       <ul class="desktop-menu">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="./html/products.html">Products</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="./../index.html">Home</a></li>
+        <li><a href="./../html/products.html">Products</a></li>
+        <li><a href="./../index.html">About</a></li>
         <li><a href="#footer">Contact</a></li>
       </ul>
-      <img src="/IMG/basket-icon.png"></li>
+      <img src="./../img/basket-icon.png"></li>
     </nav>
 
     <!--Header - Name, Slogan-->
@@ -67,17 +68,46 @@
       <h1>WatchOut</h1>
       <h2>Watching with watches</h2>
     </header>
+      
+    <!--Context Section-->
+    <section>
+      <div id = "userinfo-container">
+        <form id = "userform">
+            <h1>Customer information</h1>
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required><br>
 
-    <!--Thanks-->
-    <div class="thanks">
-      <h1>Thanks for the purchase</h1>
-      <p>
-        Your order has been placed and is being processed. You will receive an
-        email with the order details.
-      </p>
-      <a href="./../index.html">Back to homepage</a>
-    </div>
+            <div class="name-holder">
+                <div class = "fname">
+                    <label for="fname">First name:</label><br>
+                    <input pattern="[^0-9]+" type="text" id="fname" name="fname" value="" required><br>
+                </div>
+                <div class = "lname">
+                    <label for="lname">Last name:</label><br>
+                    <input pattern="[^0-9]+" type="text" id="lname" name="lname" value="" required><br>
+                </div>
+            </div>
 
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" value="" required><br>
+
+            <div class="post-holder">
+                <div class = "post">
+                    <label for="post">Postcode:</label><br>
+                    <input pattern="\d*" type="text" id="post" name="post" value="" required>
+                    <br>
+                </div>
+                <div class = "town">
+                    <label for="town">Town:</label><br>
+                    <input pattern="[^0-9]+" type="text" id="post" name="town" value="" required><br>
+                </div>
+            </div>
+
+            <button id = "save">Save</button>
+          </form> 
+      </div>
+    </section>
+      
     <!--Footer - Contact info, Social Media-->
     <footer id = "footer">
       <div class="contactinfo">

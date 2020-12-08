@@ -1,10 +1,90 @@
-.payment-container {
-  min-width: 500px;
-  max-width: 600px;
+header {
+  margin-bottom: 0; }
+
+#paymentbody {
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
   display: flex;
-  flex-direction: column;
-  padding: 10px; }
-  .payment-container .card {
-    width: 100%; }
-  .payment-container .expiration {
-    width: 50%; }
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100% - 160px); }
+  #paymentbody .payment-container {
+    width: 95%;
+    background-color: #fff;
+    padding: 45px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+    #paymentbody .payment-container h1 {
+      text-align: center;
+      margin: 0 0 40px;
+      padding: 0;
+      color: black;
+      letter-spacing: 2px; }
+    #paymentbody .payment-container #submitForm h2 {
+      margin: 0 0 20px;
+      padding: 0;
+      color: black;
+      letter-spacing: 2px;
+      font-size: 14px; }
+    #paymentbody .payment-container #submitForm input {
+      padding: 5px;
+      margin-bottom: 30px;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: none;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid #999; }
+    #paymentbody .payment-container #submitForm form div {
+      position: relative; }
+    #paymentbody .payment-container #submitForm form div label {
+      position: absolute;
+      top: 3px;
+      pointer-events: none;
+      left: 0;
+      transition: 0.5s; }
+    #paymentbody .payment-container #submitForm input:focus ~ label, #paymentbody .payment-container #submitForm input:valid ~ label {
+      left: 0;
+      top: -20px;
+      color: blue;
+      font-size: 12px;
+      font-weight: bold; }
+    #paymentbody .payment-container #submitForm input:focus, #paymentbody .payment-container #submitForm input:valid {
+      border-bottom: 2px solid blue; }
+    #paymentbody .payment-container #submitForm ::-webkit-input-placeholder {
+      text-align: right; }
+    #paymentbody .payment-container #submitForm input:-moz-placeholder {
+      text-align: right; }
+    #paymentbody .payment-container #submitForm .errorValidator {
+      color: red; }
+    #paymentbody .payment-container button {
+      border-radius: 25px;
+      height: 40px;
+      width: 100%;
+      cursor: pointer;
+      background: lightgrey;
+      color: #fff;
+      margin-bottom: 0; }
+    #paymentbody .payment-container button:hover {
+      background: green; }
+    #paymentbody .payment-container .card {
+      width: 100%; }
+    #paymentbody .payment-container .expiration {
+      width: 50%; }
+
+@media screen and (min-width: 600px) {
+  #paymentbody {
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey; }
+    #paymentbody .payment-container {
+      width: 50%;
+      min-width: 400px;
+      max-width: 100%;
+      background-color: #fff;
+      padding: 45px;
+      box-sizing: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); } }

@@ -1,17 +1,126 @@
+header {
+    margin-bottom: 0;
+}
 
-.payment-container {
-    min-width: 500px;
-    max-width: 600px;
+#paymentbody {
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
     display: flex;
-    flex-direction: column;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100% - 160px);
 
-    .card {
-        width: 100%;
-    }
-    .expiration {
-        width: 50%;
+    .payment-container {
+        width: 95%;
+        background-color: #fff;
+        padding: 45px;
+        box-sizing: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    
+        h1 {
+            text-align: center;
+            margin: 0 0 40px;
+            padding: 0;
+            color: black;
+            letter-spacing: 2px;
+        }
+
+        #submitForm {
+            h2 {
+                margin: 0 0 20px;
+                padding: 0;
+                color: black;
+                letter-spacing: 2px; 
+                font-size: 14px;
+            }
+        
+            input {
+                padding: 5px;
+                margin-bottom: 30px;
+                width: 100%;
+                box-sizing: border-box;
+                box-shadow: none;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid #999;
+            }
+            form div {
+                position: relative;
+            }
+            form div label {
+                position: absolute;
+                top: 3px;
+                pointer-events: none;
+                left: 0;
+                transition: 0.5s;
+            }
+
+            input:focus ~label, input:valid ~label {
+                left: 0;
+                top: -20px;
+                color: blue;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            input:focus, input:valid {
+                border-bottom: 2px solid blue;
+            }
+
+            ::-webkit-input-placeholder { 
+                text-align:right; 
+            }
+            
+            input:-moz-placeholder { 
+                text-align:right;
+            }
+            
+            .errorValidator {
+                color: red;
+            }
+        }
+        
+        button {
+            border-radius: 25px;
+            height: 40px;
+            width: 100%;
+            cursor: pointer;
+            background:lightgrey;
+            color: #fff;
+            margin-bottom: 0;
+        }
+    
+    
+        button:hover {
+            background: green;
+        }
+         
+        .card {
+            width: 100%;
+        }
+        .expiration {
+            width: 50%;
+        }
+        
     }
     
 }
 
+@media screen and (min-width:600px) {
+    #paymentbody {
+        margin: 0;
+        padding: 0;
+        background-color: lightgrey;
+        .payment-container {
+            width: 50%;
+            min-width: 400px;
+            max-width: 100%;
+            background-color: #fff;
+            padding: 45px;
+            box-sizing: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
