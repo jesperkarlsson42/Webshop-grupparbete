@@ -210,7 +210,7 @@ function updateCartTotalPrice() {
   }, 0);
 
   let totalSum2 = totalSum;
-  totalSum = "Total Price: " + totalSum + ":-";
+  totalSum = "Total Price:" + " " + totalSum + " " + ":-";
 
   document.getElementById("totalPrice").innerHTML = totalSum;
   
