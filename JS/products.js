@@ -120,7 +120,7 @@ function createShoppingCart() {
 
 function deleteCartProduct(e) {
   for (let i = 0; i < cartProducts.length; i++) {
-    $(".product").html(e.data.c);
+    $(".cartproduct").html(e.data.c);
     console.log(e.data.c);
     if (cartProducts[i].id == e.data.c.id) {
       cartProducts.splice(i, 1);

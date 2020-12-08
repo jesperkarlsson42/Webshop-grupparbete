@@ -2,11 +2,13 @@
   height: 80vh;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  margin-top: 40px; }
+  flex-direction: column; }
   .thanks h1 {
-    margin: 10px; }
+    margin: 10px;
+    text-align: center; }
   .thanks p {
-    margin: 10px; }
+    margin: 10px;
+    text-align: center; }
   .thanks a {
-    margin: 10px; }
+    margin: 10px;
+    text-align: center; }

@@ -1,18 +1,19 @@
-header {
-  margin-bottom: 0; }
-
+/*Background*/
+/*Font*/
+/*Padding, Margin*/
 #paymentbody {
-  margin: 0;
+  margin: 20px;
   padding: 0;
-  background-color: lightgrey;
+  background-color: #dee2e6;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: calc(100% - 160px); }
   #paymentbody .payment-container {
     width: 95%;
-    background-color: #fff;
-    padding: 45px;
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
@@ -20,23 +21,24 @@ header {
       text-align: center;
       margin: 0 0 40px;
       padding: 0;
-      color: black;
-      letter-spacing: 2px; }
+      color: #000000;
+      font-size: 24px; }
     #paymentbody .payment-container #submitForm h2 {
       margin: 0 0 20px;
+      margin-top: 60px;
       padding: 0;
-      color: black;
-      letter-spacing: 2px;
-      font-size: 14px; }
+      color: #000000;
+      font-size: 12px;
+      font-weight: bold; }
     #paymentbody .payment-container #submitForm input {
       padding: 5px;
-      margin-bottom: 30px;
+      margin: 0;
       width: 100%;
       box-sizing: border-box;
       box-shadow: none;
       outline: none;
       border: none;
-      border-bottom: 2px solid #999; }
+      border-bottom: 1px solid #808080; }
     #paymentbody .payment-container #submitForm form div {
       position: relative; }
     #paymentbody .payment-container #submitForm form div label {
@@ -52,7 +54,7 @@ header {
       font-size: 12px;
       font-weight: bold; }
     #paymentbody .payment-container #submitForm input:focus, #paymentbody .payment-container #submitForm input:valid {
-      border-bottom: 2px solid blue; }
+      border-bottom: 1px solid blue; }
     #paymentbody .payment-container #submitForm ::-webkit-input-placeholder {
       text-align: right; }
     #paymentbody .payment-container #submitForm input:-moz-placeholder {
@@ -60,13 +62,14 @@ header {
     #paymentbody .payment-container #submitForm .errorValidator {
       color: red; }
     #paymentbody .payment-container button {
-      border-radius: 25px;
+      border-radius: 2px;
       height: 40px;
       width: 100%;
       cursor: pointer;
-      background: lightgrey;
-      color: #fff;
-      margin-bottom: 0; }
+      background: #dee2e6;
+      color: #000000;
+      margin-top: 20px;
+      border: none; }
     #paymentbody .payment-container button:hover {
       background: green; }
     #paymentbody .payment-container .card {
@@ -78,7 +81,7 @@ header {
   #paymentbody {
     margin: 0;
     padding: 0;
-    background-color: lightgrey; }
+    background-color: #dee2e6; }
     #paymentbody .payment-container {
       width: 50%;
       min-width: 400px;
