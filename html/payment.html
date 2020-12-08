@@ -10,65 +10,134 @@
       crossorigin="anonymous"
     ></script>
     <script src="./../js/payment.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0435225707.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./../css/main.css" />
     <link rel="stylesheet" href="./../css/payment.css" />
   </head>
 
-  <body id="paymentbody">
-    <div class="payment-container">
+  <body> 
+    <!--Nav-->
+    <nav>
+      <img src="/IMG/logo-watchout.svg" id="logotype" />
+
+      <!--hamburger Dropdown-->
+      <div class="wrapper">
+        <div class="container">
+          <div class="hamburger-menu">
+            <div class="hamburger-btn">
+              <div class="one"></div>
+              <div class="two"></div>
+              <div class="three"></div>
+            </div>
+            <div class="menu">
+              <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./html/products.html">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Menu, Destop-->
+      <ul class="desktop-menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="./html/products.html">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+      <img src="/IMG/basket-icon.png"></li>
+    </nav>
+
+    <!--Header - Name, Slogan-->
+    <header>
+      <h1>WatchOut</h1>
+      <h2>Watching with watches</h2>
+    </header>
+
+    <!--Payment Refactoring-->
+    <div id="paymentbody">
+      <div class="payment-container">
       <h1>Select payment option</h1>
-      <form id="submitForm">
-        <h2>Name</h2>
-        <div>
-          <input
-            type="text"
-            id="form-fname"
-            name=""
-            placeholder="John"
-            required=""
-          />
-          <label>Firstname</label>
-        </div>
-        <div>
-          <input
-            type="text"
-            id="form-lname"
-            name=""
-            placeholder="Doe"
-            required=""
-          />
-          <span id="lname-error-message" class="error-form"></span>
-          <label>Lastname</label>
-        </div>
-        <h2>Card number</h2>
-        <div>
-          <input
-            type="number"
-            id="cardNumber"
-            placeholder="1111222233334444"
-            required=""
-          />
-          <span id="cardnumber-error-message" class="error-form"></span>
-          <label>Card Number</label>
-        </div>
-        <h2>Expiration date</h2>
-        <div>
-          <input type="number" id="month" placeholder="01" required="" />
-          <span id="month-error-message" class="error-form"></span>
-          <label>Month</label>
-        </div>
-        <div>
-          <input type="number" id="year" placeholder="20" required="" />
-          <span id="year-error-message" class="error-form"></span>
-          <label>Year</label>
-        </div>
-        <h2>CVC</h2>
-        <div>
-          <input type="number" id="cvc" placeholder="123" required="" />
-          <span id="cvc-error-message" class="error-form"></span>
-          <label>CVC</label>
-        </div>
-      </form>
-      <button type="submit" id="payment-btn">Confirm Payment</button>
+        <form id="submitForm">
+          <h2>Name</h2>
+            <div>
+              <input
+                type="text"
+                id="form-fname"
+                name=""
+                placeholder="John"
+                required=""
+              />
+              <label>Firstname</label>
+            </div>
+            <div>
+              <input
+                type="text"
+                id="form-lname"
+                name=""
+                placeholder="Doe"
+                required=""
+              />
+              <span id="lname-error-message" class="error-form"></span>
+              <label>Lastname</label>
+            </div>
+          <h2>Card number</h2>
+            <div>
+              <input
+                type="number"
+                id="cardNumber"
+                placeholder="1111222233334444"
+                required=""
+              />
+              <span id="cardnumber-error-message" class="error-form"></span>
+              <label>Card Number</label>
+            </div>
+          <h2>Expiration date</h2>
+            <div>
+              <input type="number" id="month" placeholder="01" required="" />
+              <span id="month-error-message" class="error-form"></span>
+              <label>Month</label>
+            </div>
+            <div>
+              <input type="number" id="year" placeholder="20" required="" />
+              <span id="year-error-message" class="error-form"></span>
+              <label>Year</label>
+            </div>
+          <h2>CVC</h2>
+            <div>
+              <input type="number" id="cvc" placeholder="123" required="" />
+              <span id="cvc-error-message" class="error-form"></span>
+              <label>CVC</label>
+            </div>
+        </form>
+        <button type="submit" id="payment-btn">Confirm Payment</button>
+      </div>
     </div>
+
+    <!--Footer - Contact info, Social Media-->
+    <footer id = "footer">
+      <div class="contactinfo">
+        <p>WatchOut AB</p>
+        <p>Tel : 0 702 123 456</p>
+        <p>Email : info@watchout.se</p>
+        <p>Address : Svedsvägen 012</p>
+      </div>
+      <div class="socialmedia">
+        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+      </div>
+    </footer>
   </body>
 </html>
