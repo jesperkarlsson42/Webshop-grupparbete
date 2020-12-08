@@ -147,7 +147,7 @@ function addOneProduct(e) {
       let tempsum = cartProducts[i].count * 1;
       let total = tempsum * parseInt(cartProducts[i].price);
       listOfTotal.push(total);
-      console.log(total);
+      updateCartTotalPrice();
       
     }
     else {
@@ -198,23 +198,16 @@ function clickedAddToCart(e) {
 // }
 
 function updateCartTotalPrice() {
+
+  let sum = 0;
+
+  $.each(cartProducts, (i , cartProduct) => {
+    sum += cartProducts[i].count * cartProducts[i].price;
+  })
   
-  for (let p = 0; p < cartProducts.length; p++) {
-    total = parseInt(cartProducts[p].price);
+  $('#totalPrice').html("Total Price" + " " + sum + " " + ":-");
 
-    listOfTotal.push(total);
-  }
-
-  let totalSum = listOfTotal.reduce(function (a, b) {
-    return a + b;
-  }, 0);
-
-  let totalSum2 = totalSum;
-  totalSum = "Total Price:" + " " + totalSum + " " + ":-";
-
-  document.getElementById("totalPrice").innerHTML = totalSum;
-  
-  return totalSum2;
+  return sum;
 }
 
 function addToLocalStorage(cartProducts) {
