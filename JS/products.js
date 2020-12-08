@@ -190,12 +190,6 @@ function clickedAddToCart(e) {
   addToLocalStorage(cartProducts);
 }
 
-// listOfTotal = [];
-
-// for (let p = 0; p < cartProducts.length; p++) {
-//   total = cartProducts[p].price;
-//   listOfTotal.push(total);
-// }
 
 function updateCartTotalPrice() {
 
@@ -205,7 +199,7 @@ function updateCartTotalPrice() {
     sum += cartProducts[i].count * cartProducts[i].price;
   })
   
-  $('#totalPrice').html("Total Price" + " " + sum + " " + ":-");
+  $('#totalPrice').html("Total Price:" + " " + sum + " " + ":-");
 
   return sum;
 }
