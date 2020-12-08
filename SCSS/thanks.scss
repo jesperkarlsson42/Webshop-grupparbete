@@ -1,17 +1,20 @@
 .thanks {
   height: 80vh;
-
-  h1 {
-    margin: 10px;
-  }
-  p {
-    margin: 10px;
-  }
-  a {
-    margin: 10px;
-  }
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 40px;
+
+  h1 {
+    margin: 10px;
+    text-align: center;
+    
+  }
+  p {
+    margin: 10px;
+    text-align: center;
+  }
+  a {
+    margin: 10px;
+    text-align: center;
+  }
 }
