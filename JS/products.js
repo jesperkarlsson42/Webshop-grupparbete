@@ -8,14 +8,12 @@ class Product {
     this.name = name;
     this.price = price;
     this.image = image;
-    
   }
 }
 
 let products = [];
 let cartProducts = [];
 let listOfTotal = [];
-
 
 let p1 = new Product("Rolex", 14245, "<img src='./../img/rolexsilver.jpg'/>");
 let p2 = new Product("Gant", 1145, "<img src='./../img/gantsilver.png'/>");
@@ -52,6 +50,7 @@ $(function () {
   addProduct();
   createProduct();
   getFromLocalStorage();
+  updateCartTotalPrice();
 
   $("#dialog").dialog({
     autoOpen: false,
@@ -81,7 +80,6 @@ function addProduct() {
 
 function createProduct() {
   $.each(products, (i, product) => {
-
     let container = $("<div>").addClass("product").attr("id", product.id);
 
     $("<div>").addClass("image").html(product.image).appendTo(container);
@@ -102,7 +100,6 @@ function createShoppingCart() {
   shoppingcart.innerHTML = "";
 
   $.each(cartProducts, (i, cartProduct) => {
-
     let shoppingCartContainer = $("<div>")
       .addClass("cartproduct")
       .attr("id", cartProduct.id);
@@ -118,20 +115,25 @@ function createShoppingCart() {
       .appendTo(shoppingCartContainer);
     deleteButton.on("click", { c: cartProduct }, deleteCartProduct);
 
-    let counterdiv = $("<div>").addClass("counterdiv").appendTo(shoppingCartContainer);
+    let counterdiv = $("<div>")
+      .addClass("counterdiv")
+      .appendTo(shoppingCartContainer);
 
     let displayCounter = $("<div>").addClass("counter").appendTo(counterdiv);
-    $('<p>').addClass('activeCount').html(cartProduct.count).appendTo(displayCounter);
+    $("<p>")
+      .addClass("activeCount")
+      .html(cartProduct.count)
+      .appendTo(displayCounter);
 
-    let minus = $("<button>-</button>").addClass('subbtn').on('click' , {c: cartProduct}, subtractOneProduct);
+    let minus = $("<button>-</button>")
+      .addClass("subbtn")
+      .on("click", { c: cartProduct }, subtractOneProduct);
     minus.appendTo(counterdiv);
 
-
-
-    let add = $("<button>+</button>").addClass('addbtn').on('click' , {c: cartProduct}, addOneProduct);
+    let add = $("<button>+</button>")
+      .addClass("addbtn")
+      .on("click", { c: cartProduct }, addOneProduct);
     add.appendTo(counterdiv);
-
-
 
     shoppingCartContainer.appendTo($("#shoppingCart-container"));
   });
@@ -148,12 +150,10 @@ function addOneProduct(e) {
       let total = tempsum * parseInt(cartProducts[i].price);
       listOfTotal.push(total);
       updateCartTotalPrice();
-      
-    }
-    else {
+      addToLocalStorage(cartProducts);
+    } else {
       updateCartTotalPrice();
     }
-    
   }
 }
 
@@ -167,6 +167,7 @@ function subtractOneProduct(e) {
     }
     createShoppingCart();
     updateCartTotalPrice();
+    addToLocalStorage(cartProducts);
   }
 }
 
@@ -178,7 +179,6 @@ function deleteCartProduct(e) {
     createShoppingCart();
     updateCartTotalPrice();
     addToLocalStorage(cartProducts);
-
   }
 }
 
@@ -190,16 +190,14 @@ function clickedAddToCart(e) {
   addToLocalStorage(cartProducts);
 }
 
-
 function updateCartTotalPrice() {
-
   let sum = 0;
 
-  $.each(cartProducts, (i , cartProduct) => {
+  $.each(cartProducts, (i, cartProduct) => {
     sum += cartProducts[i].count * cartProducts[i].price;
-  })
-  
-  $('#totalPrice').html("Total Price:" + " " + sum + " " + ":-");
+  });
+
+  $("#totalPrice").html("Total Price:" + " " + sum + " " + ":-");
 
   return sum;
 }
