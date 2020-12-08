@@ -117,18 +117,16 @@ function createShoppingCart() {
 
     let counterdiv = $("<div>").addClass("counterdiv").appendTo(shoppingCartContainer);
 
-    $("<input type='number'></input>").addClass("counter").appendTo(counterdiv);
+    let displayCounter = $("<div>").addClass("counter").appendTo(counterdiv);
+    $('<p>').addClass('activeCount').html(cartProduct.count).appendTo(displayCounter);
 
-    let minus = $("<button>-</button>").addClass('subbtn').on('click' , function(){
-      console.log('minus en');
-    });
+    let minus = $("<button>-</button>").addClass('subbtn').on('click' , {c: cartProduct}, subtractOneProduct);
     minus.appendTo(counterdiv);
 
 
 
-    $("<button>+</button>").addClass('addbtn').on('click', function(){
-      console.log('plus en');
-    }).appendTo(counterdiv);
+    let add = $("<button>+</button>").addClass('addbtn').on('click' , {c: cartProduct}, addOneProduct);
+    add.appendTo(counterdiv);
 
 
 
@@ -136,10 +134,31 @@ function createShoppingCart() {
   });
 }
 
+function addOneProduct(e) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id == e.data.c.id) {
+      cartProducts[i].count++;
+      createShoppingCart();
+
+    }
+  }
+}
+
+function subtractOneProduct(e) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id == e.data.c.id) {
+      cartProducts[i].count--;
+    }
+    if (cartProducts[i].count < 1) {
+      cartProducts.splice(i, 1);
+    }
+    createShoppingCart();
+    updateCartTotalPrice();
+  }
+}
+
 function deleteCartProduct(e) {
   for (let i = 0; i < cartProducts.length; i++) {
-    $(".cartproduct").html(e.data.c);
-    console.log(e.data.c);
     if (cartProducts[i].id == e.data.c.id) {
       cartProducts.splice(i, 1);
     }
