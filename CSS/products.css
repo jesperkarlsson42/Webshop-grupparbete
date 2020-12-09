@@ -1,55 +1,61 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-body {
-  background: #dee2e6; }
-
-nav {
-  background: black; }
-  nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    height: 50px;
-    align-items: center; }
-    nav ul li {
-      display: block;
-      padding: 0 5px; }
-      nav ul li a {
-        text-decoration: none;
-        color: white;
-        text-align: center; }
-
+/*Background*/
+/*Font*/
+/*Padding, Margin*/
 #opener {
   margin-right: 300px; }
 
-section {
+header {
+  margin: 0; }
+
+.heroimage {
+  width: 100%;
+  height: 450px;
+  background-image: url("./../img/producthero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+#product-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly; }
-  section div {
-    text-align: center;
-    margin: 10px; }
-    section div img {
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 0px;
+  padding: 20px;
+  background: #ffffff; }
+  #product-container .product {
+    margin-bottom: 20px; }
+    #product-container .product .image {
       width: 150px;
       height: 200px; }
-    section div .animal {
+    #product-container .product img {
+      height: 200px; }
+    #product-container .product .animal {
       cursor: pointer; }
+    #product-container .product h3 {
+      font-size: 16px; }
+    #product-container .product .AddToCartButton {
+      border-radius: 2px;
+      height: 30px;
+      width: 100px;
+      cursor: pointer;
+      background: #808080;
+      color: #ffffff;
+      border: none; }
 
 #total {
   width: 200px;
   height: 200px;
   color: black; }
 
-footer {
-  bottom: 0px;
-  height: 50px;
-  width: 100%;
-  background: black;
-  color: white;
-  display: flex;
-  justify-content: center; }
+/* Destop Device */
+@media only screen and (min-width: 1201px) {
+  #product-container {
+    margin: 0px;
+    padding: 60px; }
+    #product-container .product {
+      background-size: contain;
+      margin: 45px; }
+    #product-container .animal {
+      cursor: pointer; } }
