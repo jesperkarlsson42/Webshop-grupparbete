@@ -1,3 +1,5 @@
+let listOfTotalCheckout = [];
+
 $(function () {
   getCartFromLocalStorage();
   updateCheckoutTotalPrice();
@@ -24,6 +26,10 @@ function createCheckoutProducts() {
     $("<h3>").html(checkoutProduct.name).appendTo(checkoutContainer);
     $("<p>").html(checkoutProduct.price).appendTo(checkoutContainer);
     
+    let deleteButton = $("<button>Delete</button>")
+      .addClass("deleteButton")
+      .appendTo(checkoutContainer);
+    deleteButton.on("click", { c: checkoutProduct }, deleteFromCheckout);
 
     let counterdiv = $("<div>")
       .addClass("counterdiv")
@@ -35,8 +41,50 @@ function createCheckoutProducts() {
       .html(checkoutProduct.count)
       .appendTo(displayCounter);
 
+      let minus = $("<button>-</button>")
+      .addClass("subbtn")
+      .on("click", { c: checkoutProduct }, subtractOneProduct);
+    minus.appendTo(counterdiv);
+
+    let add = $("<button>+</button>")
+      .addClass("addbtn")
+      .on("click", { c: checkoutProduct }, addOneProduct);
+    add.appendTo(counterdiv);
+
+
     checkoutContainer.appendTo($("#checkout-products"));
   });
+}
+
+function addOneProduct(e) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id == e.data.c.id) {
+      cartProducts[i].count++;
+      createCheckoutProducts();
+    }
+    if (cartProducts[i].count > 1) {
+      let tempsum = cartProducts[i].count * 1;
+      let total = tempsum * parseInt(cartProducts[i].price);
+      listOfTotalCheckout.push(total);
+      updateCheckoutTotalPrice();
+    } else {
+      updateCheckoutTotalPrice();
+    }
+  }
+}
+
+function subtractOneProduct(e) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id == e.data.c.id) {
+      cartProducts[i].count--;
+    }
+    if (cartProducts[i].count < 1) {
+      cartProducts.splice(i, 1);
+    }
+    createCheckoutProducts();
+    updateCheckoutTotalPrice();
+    
+  }
 }
 
 function updateCheckoutTotalPrice() {
@@ -59,3 +107,12 @@ function getCartFromLocalStorage() {
   }
 }
 
+function deleteFromCheckout(e) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id == e.data.c.id) {
+      cartProducts.splice(i, 1);
+    }
+    createCheckoutProducts();
+    updateCheckoutTotalPrice();
+  }
+}
