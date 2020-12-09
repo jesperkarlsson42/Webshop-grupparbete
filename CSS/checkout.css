@@ -1,0 +1,13 @@
+.checkoutproduct {
+  display: flex;
+  flex-direction: row;
+  flex-direction: wrap;
+  width: 80%;
+  background-color: white;
+  border: 1px solid black;
+  justify-content: space-between; }
+  .checkoutproduct .image {
+    width: 20%; }
+  .checkoutproduct .counterdiv {
+    display: flex;
+    flex-direction: row; }
