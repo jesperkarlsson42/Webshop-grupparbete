@@ -1,6 +1,10 @@
 $(function () {
   getCartFromLocalStorage();
   updateCheckoutTotalPrice();
+  
+  $('#userInfoButton').on('click', function() {
+    window.location.href = "./../html/userinfo.html";
+  })
 });
 
 function createCheckoutProducts() {
@@ -19,10 +23,7 @@ function createCheckoutProducts() {
       .appendTo(checkoutContainer);
     $("<h3>").html(checkoutProduct.name).appendTo(checkoutContainer);
     $("<p>").html(checkoutProduct.price).appendTo(checkoutContainer);
-    let deleteButton = $("<button>Delete</button>")
-      .addClass("deleteButton")
-      .appendTo(checkoutContainer);
-    // deleteButton.on("click", { c: checkoutProduct }, deleteCheckoutProduct);
+    
 
     let counterdiv = $("<div>")
       .addClass("counterdiv")
@@ -57,3 +58,4 @@ function getCartFromLocalStorage() {
     createCheckoutProducts(cartProducts);
   }
 }
+

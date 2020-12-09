@@ -52,6 +52,10 @@ $(function () {
   getFromLocalStorage();
   updateCartTotalPrice();
 
+  $('#buyButton').on('click', function() {
+    window.location.href = "./../html/checkout.html";
+  })
+
   $("#dialog").dialog({
     autoOpen: false,
     position: { my: "right top", at: "right top", of: window },

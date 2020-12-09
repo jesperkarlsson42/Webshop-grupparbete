@@ -33,6 +33,6 @@ $(function() {
         new UserInfo(valueObject.email, valueObject.fname, valueObject.lname, valueObject.address, valueObject.post, valueObject.town)
 
         // Link to the next payment
-        window.location.href = "/html/payment.html"
+        window.location.href = "./../html/payment.html";
     })
 })
