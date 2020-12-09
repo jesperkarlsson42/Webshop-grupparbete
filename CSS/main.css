@@ -184,8 +184,9 @@ header {
   #product-container .product {
     margin-bottom: 20px; }
     #product-container .product .image {
-      width: 150px;
-      height: 200px; }
+      height: 200px;
+      display: flex;
+      justify-content: center; }
     #product-container .product img {
       height: 200px; }
     #product-container .product .animal {
