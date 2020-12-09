@@ -186,6 +186,11 @@ header {
     #product-container .product .image {
       width: 150px;
       height: 200px; }
+      #product-container .product .image img {
+        transition: transform 0.25s ease; }
+        #product-container .product .image img:hover {
+          -webkit-transform: scale(1.5);
+          transform: scale(1.5); }
     #product-container .product img {
       height: 200px; }
     #product-container .product .animal {
