@@ -32,7 +32,7 @@
       padding: 0;
       color: #000000;
       font-size: 12px;
-      font-weight: bold; }
+      font-weight: bolder; }
     #paymentbody .payment-container #submitForm input {
       padding: 5px;
       margin: 0;
@@ -41,7 +41,8 @@
       box-shadow: none;
       outline: none;
       border: none;
-      border-bottom: 1px solid #808080; }
+      border-bottom: 1px solid #808080;
+      font-weight: bold; }
     #paymentbody .payment-container #submitForm form div {
       position: relative; }
     #paymentbody .payment-container #submitForm form div label {
@@ -55,7 +56,7 @@
       top: -20px;
       color: blue;
       font-size: 12px;
-      font-weight: bold; }
+      font-weight: bolder; }
     #paymentbody .payment-container #submitForm input:focus, #paymentbody .payment-container #submitForm input:valid {
       border-bottom: 1px solid blue; }
     #paymentbody .payment-container #submitForm ::-webkit-input-placeholder {
