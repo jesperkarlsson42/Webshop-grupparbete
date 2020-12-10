@@ -97,6 +97,9 @@ header {
   height: 200px;
   color: black; }
 
+.amount {
+  color: red; }
+
 /* Destop Device */
 @media only screen and (min-width: 1201px) {
   #product-container {
