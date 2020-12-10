@@ -77,6 +77,8 @@ let p10 = new Product(
   "A collaborative design project that partners German design with British fashion. Braun and Paul Smith have teamed up on a limited-edition clock and watch project. Paul Smith is one of Britain’s foremost designers, renowned for his creative spirit, which combines tradition and modernity."
 );
 
+let mediaquery = window.matchMedia("(min-width:700px;)");
+
 $(function () {
   addProduct();
   createProduct();
@@ -108,12 +110,21 @@ $(function () {
     }
   });
 
-  $(".description").hide();
-  $(".show_hide").on("click", function () {
-    let txt = $(".description").is(":visible") ? "Read More" : "Read Less";
-    $(".show_hide").text(txt);
-    $(this).next(".description").slideToggle(200);
-  });
+  if (mediaquery.matches) {
+    $(".description").hide();
+    $(".show_hide").on("click", function () {
+      let txt = $(".description").is(":visible") ? "Read More" : "Read Less";
+      $(".show_hide").text(txt);
+      $(this).next(".description").slideToggle(200);
+    });
+  }
+
+  // $(".description").hide();
+  // $(".show_hide").on("click", function () {
+  //   let txt = $(".description").is(":visible") ? "Read More" : "Read Less";
+  //   $(".show_hide").text(txt);
+  //   $(this).next(".description").slideToggle(200);
+  // });
 });
 
 function addProduct() {
@@ -132,6 +143,7 @@ function createProduct() {
       .attr("href", "javascript:;")
       .addClass("show_hide")
       .attr("data-content", "toggle-text")
+      .attr("id", "atag")
       .text("Read More")
       .appendTo(container);
     $("<p>")
@@ -204,10 +216,10 @@ function addOneProduct(e) {
       listOfTotal.push(total);
       updateCartTotalPrice();
       addToLocalStorage(cartProducts);
-      notice ();
+      notice();
     } else {
       updateCartTotalPrice();
-      notice ();
+      notice();
     }
   }
 }
@@ -222,7 +234,7 @@ function subtractOneProduct(e) {
     }
     createShoppingCart();
     updateCartTotalPrice();
-    notice ();
+    notice();
     addToLocalStorage(cartProducts);
   }
 }
@@ -234,7 +246,7 @@ function deleteCartProduct(e) {
     }
     createShoppingCart();
     updateCartTotalPrice();
-    notice ();
+    notice();
     addToLocalStorage(cartProducts);
   }
 }
@@ -245,7 +257,7 @@ function clickedAddToCart(e) {
   createShoppingCart();
   updateCartTotalPrice();
   addToLocalStorage(cartProducts);
-  notice ();
+  notice();
 }
 
 function updateCartTotalPrice() {
@@ -273,14 +285,14 @@ function getFromLocalStorage() {
   }
 }
 
-function notice () {
+function notice() {
   let amount = 0;
-  for (let i = 0; i <cartProducts.length; i++) {
-    let total = amount +=  cartProducts[i].count;
-    
-    let totalamount = $('.notice');
-    totalamount.html('');
-    let noticeAmount = $('<p>').addClass('amount').html(total);
+  for (let i = 0; i < cartProducts.length; i++) {
+    let total = (amount += cartProducts[i].count);
+
+    let totalamount = $(".notice");
+    totalamount.html("");
+    let noticeAmount = $("<p>").addClass("amount").html(total);
     noticeAmount.appendTo(totalamount);
   }
 }
