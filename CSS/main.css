@@ -233,7 +233,8 @@ header {
 
 .cartproduct .counterdiv {
   text-align: center; }
-  .cartproduct .counterdiv .subbtn, .cartproduct .counterdiv .addbtn {
+  .cartproduct .counterdiv .subbtn,
+  .cartproduct .counterdiv .addbtn {
     width: 20px;
     height: 20px;
     color: #000000;
@@ -302,8 +303,12 @@ header {
     #product-container .product p {
       font-size: 16px;
       margin-bottom: 12px; }
+    #product-container .product a {
+      display: none;
+      cursor: none; }
     #product-container .product .description {
-      font-size: 14px; }
+      font-size: 14px;
+      display: block; }
     #product-container .product .AddToCartButton {
       border-radius: 2px;
       height: 30px;
@@ -329,6 +334,9 @@ header {
       width: 30%;
       background-size: contain;
       margin: 45px; }
+      #product-container .product a {
+        display: block;
+        cursor: pointer; }
     #product-container .animal {
       cursor: pointer; }
     #product-container .ui-dialog {
