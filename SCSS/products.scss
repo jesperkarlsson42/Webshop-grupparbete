@@ -50,6 +50,14 @@ header {
   background-position: center;
 }
 
+.cartproduct{
+  img{
+    width: 150px;
+    height: 200px;
+    object-fit: contain;
+  }
+}
+
 #product-container {
   display: flex;
   flex-direction: row;
@@ -76,6 +84,8 @@ header {
       
     img {
       width: 150px;
+      height: 200px;
+      object-fit: cover;
       transition: transform 0.25s ease;
       &:hover {
         -webkit-transform: scale(1.5);
