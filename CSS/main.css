@@ -198,6 +198,11 @@ header {
   background-repeat: no-repeat;
   background-position: center; }
 
+.cartproduct img {
+  width: 150px;
+  height: 200px;
+  object-fit: contain; }
+
 #product-container {
   display: flex;
   flex-direction: row;
@@ -220,6 +225,8 @@ header {
       margin-bottom: 12px; }
       #product-container .product .image img {
         width: 150px;
+        height: 200px;
+        object-fit: cover;
         transition: transform 0.25s ease; }
         #product-container .product .image img:hover {
           -webkit-transform: scale(1.5);
