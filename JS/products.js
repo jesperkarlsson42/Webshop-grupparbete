@@ -107,6 +107,13 @@ $(function () {
       $("#dialog").dialog("close");
     }
   });
+
+  $(".description").hide();
+  $(".show_hide").on("click", function () {
+    let txt = $(".description").is(":visible") ? "Read More" : "Read Less";
+    $(".show_hide").text(txt);
+    $(this).next(".description").slideToggle(200);
+  });
 });
 
 function addProduct() {
@@ -120,6 +127,13 @@ function createProduct() {
     $("<div>").addClass("image").html(product.image).appendTo(container);
     $("<h3>").html(product.name).appendTo(container);
     $("<p>").html(product.price).appendTo(container);
+
+    $("<a>")
+      .attr("href", "javascript:;")
+      .addClass("show_hide")
+      .attr("data-content", "toggle-text")
+      .text("Read More")
+      .appendTo(container);
     $("<p>")
       .addClass("description")
       .html(product.description)
@@ -190,8 +204,10 @@ function addOneProduct(e) {
       listOfTotal.push(total);
       updateCartTotalPrice();
       addToLocalStorage(cartProducts);
+      notice ();
     } else {
       updateCartTotalPrice();
+      notice ();
     }
   }
 }
@@ -206,6 +222,7 @@ function subtractOneProduct(e) {
     }
     createShoppingCart();
     updateCartTotalPrice();
+    notice ();
     addToLocalStorage(cartProducts);
   }
 }
@@ -217,6 +234,7 @@ function deleteCartProduct(e) {
     }
     createShoppingCart();
     updateCartTotalPrice();
+    notice ();
     addToLocalStorage(cartProducts);
   }
 }
@@ -227,6 +245,7 @@ function clickedAddToCart(e) {
   createShoppingCart();
   updateCartTotalPrice();
   addToLocalStorage(cartProducts);
+  notice ();
 }
 
 function updateCartTotalPrice() {
@@ -251,5 +270,17 @@ function getFromLocalStorage() {
   if (cartProductFromLS) {
     cartProducts = JSON.parse(cartProductFromLS);
     createShoppingCart(cartProducts);
+  }
+}
+
+function notice () {
+  let amount = 0;
+  for (let i = 0; i <cartProducts.length; i++) {
+    let total = amount +=  cartProducts[i].count;
+    
+    let totalamount = $('.notice');
+    totalamount.html('');
+    let noticeAmount = $('<p>').addClass('amount').html(total);
+    noticeAmount.appendTo(totalamount);
   }
 }

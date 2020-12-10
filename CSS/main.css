@@ -169,7 +169,7 @@
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out,  transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
@@ -186,6 +186,10 @@
       display: none; }
     #opener .basket img {
       margin: 0; }
+
+.ui-dialog {
+  top: 60px !important;
+  position: absolute; }
 
 header {
   margin: 0; }
@@ -308,6 +312,14 @@ header {
       color: #ffffff;
       border: none;
       margin-bottom: 20px; }
+
+#total {
+  width: 200px;
+  height: 200px;
+  color: black; }
+
+.amount {
+  color: red; }
 
 /* Destop Device */
 @media only screen and (min-width: 1201px) {
