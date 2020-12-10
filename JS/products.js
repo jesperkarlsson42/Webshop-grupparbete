@@ -190,8 +190,10 @@ function addOneProduct(e) {
       listOfTotal.push(total);
       updateCartTotalPrice();
       addToLocalStorage(cartProducts);
+      notice ();
     } else {
       updateCartTotalPrice();
+      notice ();
     }
   }
 }
@@ -206,6 +208,7 @@ function subtractOneProduct(e) {
     }
     createShoppingCart();
     updateCartTotalPrice();
+    notice ();
     addToLocalStorage(cartProducts);
   }
 }
@@ -217,6 +220,7 @@ function deleteCartProduct(e) {
     }
     createShoppingCart();
     updateCartTotalPrice();
+    notice ();
     addToLocalStorage(cartProducts);
   }
 }
@@ -227,6 +231,7 @@ function clickedAddToCart(e) {
   createShoppingCart();
   updateCartTotalPrice();
   addToLocalStorage(cartProducts);
+  notice ();
 }
 
 function updateCartTotalPrice() {
@@ -251,5 +256,17 @@ function getFromLocalStorage() {
   if (cartProductFromLS) {
     cartProducts = JSON.parse(cartProductFromLS);
     createShoppingCart(cartProducts);
+  }
+}
+
+function notice () {
+  let amount = 0;
+  for (let i = 0; i <cartProducts.length; i++) {
+    let total = amount +=  cartProducts[i].count;
+    
+    let totalamount = $('.notice');
+    totalamount.html('');
+    let noticeAmount = $('<p>').addClass('amount').html(total);
+    noticeAmount.appendTo(totalamount);
   }
 }
