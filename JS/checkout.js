@@ -28,6 +28,7 @@ function createCheckoutProducts() {
     
     let deleteButton = $("<button>Delete</button>")
       .addClass("deleteButton")
+      .html('<i class="fas fa-trash-alt"></i>')
       .appendTo(checkoutContainer);
     deleteButton.on("click", { c: checkoutProduct }, deleteFromCheckout);
 
@@ -43,15 +44,17 @@ function createCheckoutProducts() {
 
       let minus = $("<button>-</button>")
       .addClass("subbtn")
+      .html('<i class="fas fa-minus-circle"></i>')
       .on("click", { c: checkoutProduct }, subtractOneProduct);
     minus.appendTo(counterdiv);
 
     let add = $("<button>+</button>")
       .addClass("addbtn")
+      .html('<i class="fas fa-plus-circle"></i>')
       .on("click", { c: checkoutProduct }, addOneProduct);
     add.appendTo(counterdiv);
 
-
+    counterdiv.appendTo(checkoutContainer);
     checkoutContainer.appendTo($("#checkout-products"));
   });
 }
