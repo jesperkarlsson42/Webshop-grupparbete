@@ -144,5 +144,11 @@ header {
     .animal {
       cursor: pointer;
     }
+    
+    .ui-dialog {
+      &[aria-labelledby="true"]
+      margin-top: 60px;
+      top: 60px;
+    }
   }
 }

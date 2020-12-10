@@ -267,7 +267,10 @@ header {
       background-size: contain;
       margin: 45px; }
     #product-container .animal {
-      cursor: pointer; } }
+      cursor: pointer; }
+    #product-container div aria-describedby aria-labelledby .ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable {
+      margin-top: 60px;
+      top: 60px; } }
 
 * {
   margin: 0;
