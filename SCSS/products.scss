@@ -1,8 +1,40 @@
 @import "variables";
 @import "mixins";
 
+/*move in nav in main*/
 #opener {
-  margin-right: 300px;
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  width: 20px;
+  height: 45px;
+
+  .basket{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+
+    align-items: center;
+    &::marker{
+      display: none;
+    }
+    img {
+      margin: 0;
+    }
+  }
 }
 
 header {
@@ -30,31 +62,42 @@ header {
 
   .product {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 
     .image {
       width: 150px;
-      height: 200px;
-      img {
-        transition: transform 0.25s ease;
-        &:hover {
-          -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-        }
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    
+      
+    img {
+      width: 150px;
+      transition: transform 0.25s ease;
+      &:hover {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
       }
     }
-
-    img {
-      height: 200px;
-    }
-
-    .animal {
-      cursor: pointer;
-    }
+  }
 
     h3 {
       font-size: 16px;
+      margin-bottom: 12px;
     }
 
+    p {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+      
+    .description {
+      font-size: 14px;
+    }
+    
     .AddToCartButton {
       border-radius: 2px;
       height: 30px;
@@ -63,7 +106,8 @@ header {
       background: $bg-social;
       color: $font-white;
       border: none;
-    }
+      margin-bottom: 20px;
+    } 
   }
 }
 
@@ -78,8 +122,12 @@ header {
   #product-container {
     margin: 0px;
     padding: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     .product {
+      width: 30%;
       background-size: contain;
       margin: 45px;
     }
