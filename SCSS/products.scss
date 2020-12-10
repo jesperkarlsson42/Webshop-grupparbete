@@ -1,7 +1,6 @@
 @import "variables";
 @import "mixins";
 
-/*move in nav in main*/
 #opener {
   display: inline-block;
   border: none;
@@ -54,13 +53,89 @@ header {
   background-position: center;
 }
 
+.ui-dialog {
+  position: absolute;
+  top: 60px !important;
+  
+}
+
 .cartproduct {
   img {
+
     width: 150px;
     height: 200px;
     object-fit: contain;
   }
+  h3 {
+    font-size: 14px;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .deleteButton {
+    background: url("../IMG/trash.png");
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    text-indent: -999999px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    margin: 0 auto;
+  }
+
+  .counterdiv {
+    text-align: center;
+
+    .subbtn, .addbtn {
+      width: 20px;
+      height: 20px;
+      color: #000000;
+      background: #e9e9e9;
+      border: none;
+      border-radius: 3px;
+      margin: 2px;
+      margin-bottom: 20px;
+    }
+  }
 }
+
+#total {
+  width: 250px;
+  height: 100px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  #totalPrice {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  #buyButton {
+    height: 45px;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    color: $font-white;
+    background: $bg-head;
+    font-family: default;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    border-radius: 6px;
+  }
+}
+
+
+
 
 #product-container {
   display: flex;
@@ -124,11 +199,6 @@ header {
   }
 }
 
-#total {
-  width: 200px;
-  height: 200px;
-  color: black;
-}
 
 .amount {
   color: red;
@@ -151,5 +221,11 @@ header {
     .animal {
       cursor: pointer;
     }
+    
+    .ui-dialog {
+      
+      margin-top: 60px;
+      top: 60px;
+    } 
   }
 }
