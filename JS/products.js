@@ -77,8 +77,6 @@ let p10 = new Product(
   "A collaborative design project that partners German design with British fashion. Braun and Paul Smith have teamed up on a limited-edition clock and watch project. Paul Smith is one of Britain’s foremost designers, renowned for his creative spirit, which combines tradition and modernity."
 );
 
-let mediaquery = window.matchMedia("(min-width:700px;)");
-
 $(function () {
   addProduct();
   createProduct();
@@ -110,21 +108,12 @@ $(function () {
     }
   });
 
-  if (mediaquery.matches) {
-    $(".description").hide();
-    $(".show_hide").on("click", function () {
-      let txt = $(".description").is(":visible") ? "Read More" : "Read Less";
-      $(".show_hide").text(txt);
-      $(this).next(".description").slideToggle(200);
-    });
-  }
-
-  // $(".description").hide();
-  // $(".show_hide").on("click", function () {
-  //   let txt = $(".description").is(":visible") ? "Read More" : "Read Less";
-  //   $(".show_hide").text(txt);
-  //   $(this).next(".description").slideToggle(200);
-  // });
+  $(".description").hide();
+  $(".show_hide").on("click", function () {
+    let txt = $(".description").is(":visible") ? "Read More" : "Read Less";
+    $(".show_hide").text(txt);
+    $(this).next(".description").slideToggle(200);
+  });
 });
 
 function addProduct() {
