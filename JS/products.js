@@ -38,7 +38,7 @@ let p4 = new Product(
   "Longines",
   10725,
   "<img src='./../img/longinessilver.jpg'/>",
-  "Conquest 24 has a simple yet appealing design. It features a robust package, with a 41 mm wide round steel case (with a screw-in back and a screw-in crown with protection) and a three-link bracelet (with the thickest central row) of the same material. The dial is available in three classic colors: black, silvered and blue; and it is dominated with two Roman numerals, a 24-hour scale and its attached red hand. For improved visibility, hands, numerals and indices are coated with luminescent SuperLuminova material. The watch includes a minute scale on the flange, and a date aperture, as well as a sapphire crystal with glare-proof coating on the underside as a protection for the dial."
+  "Conquest 24 has a simple yet appealing design. It features a robust package, with a 41 mm wide round steel case (with a screw-in back and a screw-in crown with protection) and a three-link bracelet (with the thickest central row) of the same material. The dial is available in three classic colors: black, silvered and blue; and it is dominated with two Roman numerals, a 24-hour scale and its attached red hand. For improved visibility, hands, numerals and indices are coated with luminescent SuperLuminova material."
 );
 let p5 = new Product(
   "Hunters Race",

@@ -281,7 +281,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-items: center;
-    align-items: center; }
+    align-items: center;
+    height: 500px; }
     #product-container .product .image {
       width: 150px;
       display: flex;
@@ -312,11 +313,6 @@ header {
       color: #ffffff;
       border: none;
       margin-bottom: 20px; }
-
-#total {
-  width: 200px;
-  height: 200px;
-  color: black; }
 
 .amount {
   color: red; }
