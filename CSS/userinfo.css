@@ -1,6 +1,120 @@
 /*Background*/
 /*Font*/
 /*Padding, Margin*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif; }
+
+/*Background*/
+/*Font*/
+/*Padding, Margin*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif; }
+
+/*Hamburger*/
+.wrapper {
+  position: absolute;
+  top: 13px;
+  left: 0; }
+  .wrapper .container {
+    width: 75px; }
+    .wrapper .container .hamburger-btn {
+      width: 33px;
+      height: 33px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      margin: 0 auto;
+      cursor: pointer;
+      position: relative; }
+      .wrapper .container .hamburger-btn .two {
+        position: absolute;
+        top: 45%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+      .wrapper .container .hamburger-btn .one {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+      .wrapper .container .hamburger-btn .three {
+        position: absolute;
+        top: 65%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+
+.wrapper .hamburger-btn.active .one {
+  transform: rotate(45deg);
+  top: 45%;
+  left: 25%;
+  position: absolute; }
+
+.wrapper .hamburger-btn.active .two {
+  opacity: 0; }
+
+.wrapper .hamburger-btn.active .three {
+  transform: rotate(-45deg);
+  top: 45%;
+  left: 25%; }
+
+.menu {
+  width: 140px;
+  height: auto;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+  top: 10px;
+  left: -19%;
+  transition: all 0.5s linear; }
+  .menu li {
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s linear; }
+    .menu li a {
+      padding: 10px;
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      color: black;
+      transition: all 0.2s linear;
+      text-decoration: none; }
+    .menu li a:hover {
+      color: black;
+      font-weight: bold; }
+  .menu li:hover {
+    background: #80ddd2; }
+
+.menu::before {
+  content: "";
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  transform: translate(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent; }
+
+.menu.active {
+  opacity: 1; }
+
 #userinfo-container {
   width: 100%;
   display: flex;
@@ -15,6 +129,38 @@
     margin: 20px;
     padding: 0 20px;
     padding-bottom: 20px; }
+    @media screen and (min-width: 1024px) {
+      #userinfo-container #userform {
+        width: 45%;
+        margin: 20px;
+        padding: 0 60px;
+        padding-bottom: 20px; } }
+    @media screen and (min-width: 1024px) {
+      #userinfo-container #userform .name-holder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between; } }
+    @media screen and (min-width: 1024px) {
+      #userinfo-container #userform .name-holder .fname,
+      #userinfo-container #userform .name-holder .lname {
+        width: 49%;
+        padding: 0;
+        margin: 0; } }
+    @media screen and (min-width: 1024px) {
+      #userinfo-container #userform .post-holder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between; } }
+    @media screen and (min-width: 1024px) {
+      #userinfo-container #userform .post-holder .post,
+      #userinfo-container #userform .post-holder .town {
+        width: 49%;
+        padding: 0;
+        margin: 0; } }
     #userinfo-container #userform input {
       width: 100%;
       height: 45px;
@@ -29,31 +175,3 @@
       background: #242424;
       color: #ffffff;
       float: right; }
-
-/* Destop Device */
-@media only screen and (min-width: 1201px) {
-  #userinfo-container #userform {
-    width: 45%;
-    margin: 20px;
-    padding: 0 60px;
-    padding-bottom: 20px; }
-    #userinfo-container #userform .name-holder {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      justify-content: space-between; }
-      #userinfo-container #userform .name-holder .fname, #userinfo-container #userform .name-holder .lname {
-        width: 49%;
-        padding: 0;
-        margin: 0; }
-    #userinfo-container #userform .post-holder {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      justify-content: space-between; }
-      #userinfo-container #userform .post-holder .post, #userinfo-container #userform .post-holder .town {
-        width: 49%;
-        padding: 0;
-        margin: 0; } }

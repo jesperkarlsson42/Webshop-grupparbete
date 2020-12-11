@@ -9,9 +9,8 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <script src="./../jquery-ui-1.12.1/jquery-ui.js"></script>
+
     <script src="./../js/checkout.js"></script>
-    <!-- <script src="./../js/products.js"></script> -->
     <script src="./../js/dropdown.js"></script>
     <script
       src="https://kit.fontawesome.com/0435225707.js"
@@ -26,12 +25,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet"> 
-    <link href="./../jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
-    <link href="./../jquery-ui-1.12.1/jquery-ui.theme.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <link href="./../css/main.css" rel="stylesheet" />
     <link href="./../css/checkout.css" rel="stylesheet" />
+    <link href="./../css/dropdown.css" rel="stylesheet" />
   </head>
   <body>
     <!--Nav-->
@@ -48,22 +49,20 @@
             <ul>
               <li><a href="./../index.html">Home</a></li>
               <li><a href="./../html/products.html">Products</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="./../index.html">About</a></li>
+              <li><a href="#footer">Contact</a></li>
             </ul>
           </div>
         </div>
       </div>
 
-      <ul class="logo"></ul>
-
-      <ul>
+      <!--Menu, Destop-->
+      <ul class="desktop-menu">
         <li><a href="./../index.html">Home</a></li>
-        <li><a href="./html/products.html">Products</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="./../html/products.html">Products</a></li>
+        <li><a href="./../index.html">About</a></li>
         <li><a href="#footer">Contact</a></li>
       </ul>
-    </nav>
 
     <section id="checkout-products"></section>
     <div id="totalCheckout">
@@ -72,7 +71,7 @@
     </div>
 
     <!--Footer - Contact info, Social Media-->
-    <footer>
+    <footer id="footer">
       <div class="contactinfo">
         <p>WatchOut AB</p>
         <p>Tel : 0 702 123 456</p>
