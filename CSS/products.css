@@ -1,6 +1,124 @@
 /*Background*/
 /*Font*/
 /*Padding, Margin*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif; }
+
+/*Background*/
+/*Font*/
+/*Padding, Margin*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif; }
+
+/*Hamburger*/
+.wrapper {
+  position: absolute;
+  top: 13px;
+  left: 0; }
+  .wrapper .container {
+    width: 75px; }
+    .wrapper .container .hamburger-btn {
+      width: 33px;
+      height: 33px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      margin: 0 auto;
+      cursor: pointer;
+      position: relative; }
+      .wrapper .container .hamburger-btn .two {
+        position: absolute;
+        top: 45%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+      .wrapper .container .hamburger-btn .one {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+      .wrapper .container .hamburger-btn .three {
+        position: absolute;
+        top: 65%;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 50px;
+        transition: all 0.3s linear; }
+
+.wrapper .hamburger-btn.active .one {
+  transform: rotate(45deg);
+  top: 45%;
+  left: 25%;
+  position: absolute; }
+
+.wrapper .hamburger-btn.active .two {
+  opacity: 0; }
+
+.wrapper .hamburger-btn.active .three {
+  transform: rotate(-45deg);
+  top: 45%;
+  left: 25%; }
+
+.menu {
+  width: 140px;
+  height: auto;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+  top: 10px;
+  left: -19%;
+  transition: all 0.5s linear; }
+  .menu li {
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s linear; }
+    .menu li a {
+      padding: 10px;
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      color: black;
+      transition: all 0.2s linear;
+      text-decoration: none; }
+    .menu li a:hover {
+      color: black;
+      font-weight: bold; }
+  .menu li:hover {
+    background: #80ddd2; }
+
+.menu::before {
+  content: "";
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  transform: translate(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent; }
+
+.menu.active {
+  opacity: 1; }
+
+.ui-dialog {
+  position: absolute;
+  top: 60px !important; }
+
 #opener {
   display: inline-block;
   border: none;
@@ -29,10 +147,6 @@
     #opener .basket img {
       margin: 0; }
 
-.ui-dialog {
-  top: 60px !important;
-  position: absolute; }
-
 header {
   margin: 0; }
 
@@ -43,10 +157,6 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
-
-.ui-dialog {
-  position: absolute;
-  top: 60px !important; }
 
 .cartproduct img {
   width: 150px;
@@ -119,6 +229,13 @@ header {
   margin: 0px;
   padding: 20px;
   background: #ffffff; }
+  @media screen and (min-width: 1024px) {
+    #product-container {
+      margin: 0px;
+      padding: 60px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; } }
   #product-container .product {
     margin-bottom: 20px;
     display: flex;
@@ -127,6 +244,11 @@ header {
     align-items: center;
     height: 500px;
     width: 95%; }
+    @media screen and (min-width: 1024px) {
+      #product-container .product {
+        width: 30%;
+        background-size: contain;
+        margin: 45px; } }
     #product-container .product .image {
       width: 150px;
       display: flex;
@@ -160,21 +282,3 @@ header {
 
 .amount {
   color: red; }
-
-/* Destop Device */
-@media only screen and (min-width: 1201px) {
-  #product-container {
-    margin: 0px;
-    padding: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; }
-    #product-container .product {
-      width: 30%;
-      background-size: contain;
-      margin: 45px; }
-    #product-container .animal {
-      cursor: pointer; }
-    #product-container .ui-dialog {
-      margin-top: 60px;
-      top: 60px; } }

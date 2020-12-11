@@ -1,3 +1,8 @@
+@import "./variables/variables";
+@import "./resets";
+@import "./variables/mixins";
+@import "./dropdown.scss";
+
 .thanks {
   height: 80vh;
   display: flex;
@@ -7,7 +12,6 @@
   h1 {
     margin: 10px;
     text-align: center;
-    
   }
   p {
     margin: 10px;

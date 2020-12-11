@@ -1,5 +1,12 @@
-@import "variables";
-@import "mixins";
+@import "./variables/variables";
+@import "./resets";
+@import "./variables/mixins";
+@import "./dropdown.scss";
+
+.ui-dialog {
+  position: absolute;
+  top: 60px !important;
+}
 
 #opener {
   display: inline-block;
@@ -35,11 +42,6 @@
   }
 }
 
-.ui-dialog {
-  top: 60px !important;
-  position: absolute;
-}
-
 header {
   margin: 0;
 }
@@ -51,11 +53,6 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.ui-dialog {
-  position: absolute;
-  top: 60px !important;
 }
 
 .cartproduct {
@@ -142,6 +139,13 @@ header {
   margin: 0px;
   padding: 20px;
   background: #ffffff;
+  @include desktop {
+    margin: 0px;
+    padding: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   .product {
     margin-bottom: 20px;
@@ -151,6 +155,11 @@ header {
     align-items: center;
     height: 500px;
     width: 95%;
+    @include desktop {
+      width: 30%;
+      background-size: contain;
+      margin: 45px;
+    }
 
     .image {
       width: 150px;
@@ -199,29 +208,4 @@ header {
 
 .amount {
   color: red;
-}
-
-/* Destop Device */
-@media only screen and (min-width: 1201px) {
-  #product-container {
-    margin: 0px;
-    padding: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    .product {
-      width: 30%;
-      background-size: contain;
-      margin: 45px;
-    }
-    .animal {
-      cursor: pointer;
-    }
-
-    .ui-dialog {
-      margin-top: 60px;
-      top: 60px;
-    }
-  }
 }
