@@ -82,6 +82,7 @@ $(function () {
   createProduct();
   getFromLocalStorage();
   updateCartTotalPrice();
+  notice();
 
   $("#buyButton").on("click", function () {
     window.location.href = "./../html/checkout.html";
@@ -276,12 +277,20 @@ function getFromLocalStorage() {
 
 function notice() {
   let amount = 0;
-  for (let i = 0; i < cartProducts.length; i++) {
-    let total = (amount += cartProducts[i].count);
-
+  if (cartProducts.length <= 0) {
+    let total = 0;
     let totalamount = $(".notice");
     totalamount.html("");
     let noticeAmount = $("<p>").addClass("amount").html(total);
     noticeAmount.appendTo(totalamount);
+  } else {
+    for (let i = 0; i < cartProducts.length; i++) {
+      let total = (amount += cartProducts[i].count);
+
+      let totalamount = $(".notice");
+      totalamount.html("");
+      let noticeAmount = $("<p>").addClass("amount").html(total);
+      noticeAmount.appendTo(totalamount);
+    }
   }
 }
