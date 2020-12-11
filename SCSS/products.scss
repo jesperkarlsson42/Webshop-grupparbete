@@ -127,6 +127,7 @@ header {
     font-family: "Montserrat", sans-serif;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
   }
 }
 
@@ -187,6 +188,16 @@ header {
     p {
       font-size: 16px;
       margin-bottom: 12px;
+    }
+
+    a {
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: grey;
+      &:hover {
+        background: lightgrey;
+      }
     }
 
     .description {
