@@ -218,7 +218,8 @@ header {
     font-family: default;
     font-family: "Montserrat", sans-serif;
     border: none;
-    border-radius: 6px; }
+    border-radius: 6px;
+    cursor: pointer; }
 
 #product-container {
   display: flex;
@@ -268,6 +269,13 @@ header {
     #product-container .product p {
       font-size: 16px;
       margin-bottom: 12px; }
+    #product-container .product a {
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: grey; }
+      #product-container .product a:hover {
+        background: lightgrey; }
     #product-container .product .description {
       font-size: 14px; }
     #product-container .product .AddToCartButton {
