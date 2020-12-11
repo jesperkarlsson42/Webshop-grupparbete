@@ -1,9 +1,10 @@
 @import "variables";
 @import "mixins";
-@import "./../scss/dropdown.scss";
+
 @import "./../scss/payment.scss";
 @import "./../scss/userinfo.scss";
 @import "./../scss/products.scss";
+@import "./../scss/checkout.scss";
 
 * {
   margin: 0;
@@ -14,6 +15,8 @@
 
 body {
   background: $bg-body;
+  position: relative;
+  min-height: 100vh;
 }
 
 
@@ -312,7 +315,8 @@ section {
 }
 
 footer {
-  position: relative;
+  position: absolute;
+  bottom: -100;
   height: 100px;
   width: 100%;
   background: $bg-black;

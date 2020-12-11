@@ -26,44 +26,52 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet"> 
     <link href="./../jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
     <link href="./../jquery-ui-1.12.1/jquery-ui.theme.css" rel="stylesheet" />
     <link href="./../css/main.css" rel="stylesheet" />
-    <link href="./../css/checkout.css" rel="stylesheet" />
+    <link href="./../css/products.css" rel="stylesheet" />
   </head>
   <body>
     <!--Nav-->
     <nav>
       <img src="./../img/logo-watchout.svg" id="logotype" />
+
+      <!--hamburger Dropdown-->
       <div class="wrapper">
         <div class="container">
-          <div class="hamburger-btn">
-            <div class="one"></div>
-            <div class="two"></div>
-            <div class="three"></div>
-          </div>
-          <div class="menu">
-            <ul>
-              <li><a href="./../index.html">Home</a></li>
-              <li><a href="./../html/products.html">Products</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
+          <div class="hamburger-menu">
+            <div class="hamburger-btn">
+              <div class="one"></div>
+              <div class="two"></div>
+              <div class="three"></div>
+            </div>
+            <div class="menu">
+              <ul>
+                <li><a href="./../index.html">Home</a></li>
+                <li><a href="./../html/products.html">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
-      <ul class="logo"></ul>
-
-      <ul>
+      <!--Menu, Destop-->
+      <ul class="desktop-menu">
         <li><a href="./../index.html">Home</a></li>
-        <li><a href="./html/products.html">Products</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="./../html/products.html">Products</a></li>
+        <li><a href="./../index.html">About</a></li>
         <li><a href="#footer">Contact</a></li>
       </ul>
+      <!--<img src="./../img/basket-icon.png"></li>-->
     </nav>
+
+    <!--Header - Name, Slogan-->
+    <header>
+      <h1>WatchOut</h1>
+      <h2>Watching with watches</h2>
+    </header>
 
     <section id="checkout-products"></section>
     <div id="totalCheckout">
