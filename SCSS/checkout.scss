@@ -3,87 +3,180 @@
 @import "./variables/mixins";
 @import "./dropdown.scss";
 
-//MOBILE FIRST
-.checkoutproduct {
-  display: flex;
-  flex-direction: row;
-  flex-direction: wrap;
-  width: 90%;
-  background-color: white;
-  border: 1px solid black;
-  justify-content: space-between;
+//* Mobile Device */
+#checkout-products {
+  width: 100%;
   position: relative;
-  padding: 40px;
-  margin: 10px;
-  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
 
-  p {
-    text-align: center;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 1%;
-    left: 80%;
-    font-family: "Open Sans", sans-serif;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .image {
-    width: 15%;
-    height: 15%;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .counterdiv {
+  .checkoutproduct {
+    width: 90%;
+    height: 250px;
+    background-color: #ffffff;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-
-    .subbtn {
-      position: absolute;
-      height: 20px;
-      width: 20px;
-      top: 85%;
-      left: 80%;
-      cursor: pointer;
-      border: none;
-      background-color: transparent;
+    position: relative;
+    margin: 10px;
+    @include desktop {
+      width: 80%;
+      height: 250px;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      margin: 10px;
     }
-    .addbtn {
+
+    h3 {
+      text-align: center;
       position: absolute;
-      height: 20px;
-      width: 20px;
-      top: 85%;
-      left: 90%;
-      cursor: pointer;
+      left: 140px;
+      top: 100px;
+      @include desktop {
+        position: absolute;
+        top: 115px;
+        left: 350px;
+      }
+    }
+
+    p {
+      text-align: center;
+      position: absolute;
+      left: 140px;
+      top: 130px;
+      @include desktop {
+        position: absolute;
+        top: 119px;
+        left: 600px;
+      }
+    }
+
+    .image {
+      width: 100px;
+      height: 150px;
+      object-fit: contain;
+      @include desktop {
+        position: relative;
+        width: 100px;
+        height: 150px;
+        object-fit: contain;
+      }
+
+      img {
+        width: 100px;
+        object-fit: contain;
+        margin-left: 20px;
+        @include desktop {
+          width: 100px;
+          object-fit: contain;
+          margin-left: 60px;
+        }
+      }
+    }
+
+    .deleteButton {
+      margin-left: 90px;
       border: none;
-      background-color: transparent;
+      background: transparent;
+      @include desktop {
+        margin-left: 700px;
+        border: none;
+        background: transparent;
+      }
+
+      .fa-trash-alt {
+        font-weight: 100;
+        padding: 0;
+        margin: 0;
+        color: $bg-black;
+      }
     }
 
     .activeCount {
       position: absolute;
-      width: 20px;
-      height: 20px;
-      border: 1px solid black;
-      font-weight: bold;
-      top: 85%;
-      left: 85%;
-      border-radius: 20%;
+      left: -17px;
+      top: 6px;
+      @include desktop {
+        position: absolute;
+        left: -115px;
+        top: 6px;
+      }
+    }
+
+    .counterdiv {
+      width: 100px;
+      @include desktop {
+        width: 100px;
+        margin-right: 60px;
+      }
+
+      .counter {
+        position: absolute;
+        right: 48px;
+        @include desktop {
+          position: absolute;
+          right: 10px;
+        }
+      }
+
+      .subbtn,
+      .addbtn {
+        margin-right: 20px;
+        background: $bg-body;
+        color: $bg-social;
+        border: none;
+        border-radius: 3px;
+        width: 30px;
+        height: 30px;
+        @include desktop {
+          margin-right: 20px;
+          background: $bg-body;
+          color: $bg-social;
+          border: none;
+          border-radius: 3px;
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+#totalCheckout {
+  width: 90%;
+  margin: 0 auto;
+  @include desktop {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #totalCheckoutPrice {
+    text-align: right;
+    margin-right: 5%;
+    margin-bottom: 10px;
+    display: block;
+    @include desktop {
+      margin-right: 10%;
     }
   }
 
-  .deleteButton {
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    top: 85%;
-    left: 70%;
-    cursor: pointer;
+  #userInfoButton {
+    height: 45px;
+    width: 150px;
+    color: $font-white;
+    background: $bg-head;
+    display: block;
+    margin: 0 auto;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    padding: 10px;
     border: none;
-    background-color: transparent;
+    border-radius: 6px;
+    @include desktop {
+      margin-right: 10%;
+    }
   }
 }
