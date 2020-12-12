@@ -290,4 +290,11 @@ header {
       margin-bottom: 20px; }
 
 .amount {
-  color: red; }
+  color: #ffffff;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 20px; }
