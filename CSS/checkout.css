@@ -119,15 +119,32 @@
 .menu .active {
   position: static; }
 
+.checkouthead {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; }
+  .checkouthead h1 {
+    font-size: 24px;
+    font-weight: 100;
+    color: #ffffff;
+    background: #242424;
+    width: 90%;
+    text-align: center;
+    padding: 30px; }
+    @media screen and (min-width: 1024px) {
+      .checkouthead h1 {
+        width: 80%; } }
+
 #checkout-products {
   width: 100%;
   position: relative;
   min-height: 100vh;
-  align-items: revert; }
+  align-items: revert;
+  margin-top: 0; }
   @media screen and (min-width: 1024px) {
     #checkout-products {
-      min-height: 80vh;
-      margin-top: 60px; } }
+      min-height: 80vh; } }
   #checkout-products .checkoutproduct {
     width: 90%;
     height: 350px;
@@ -260,10 +277,12 @@
     text-align: right;
     margin-right: 5%;
     margin-bottom: 10px;
-    display: block; }
+    display: block;
+    font-weight: 600; }
     @media screen and (min-width: 1024px) {
       #totalCheckout #totalCheckoutPrice {
-        margin-right: 10%; } }
+        margin-right: 10%;
+        font-weight: 600; } }
   #totalCheckout #userInfoButton {
     height: 45px;
     width: 150px;

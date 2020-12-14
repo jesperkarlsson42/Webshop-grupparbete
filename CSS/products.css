@@ -271,10 +271,11 @@ header {
     #product-container .product h3 {
       font-size: 16px;
       margin-bottom: 12px;
-      font-weight: 100; }
+      font-weight: 600; }
     #product-container .product p {
       font-size: 16px;
-      margin-bottom: 12px; }
+      margin-bottom: 12px;
+      font-weight: 600; }
     #product-container .product a {
       padding: 10px;
       margin: 10px;
