@@ -65,6 +65,7 @@ header {
   h3 {
     font-size: 14px;
     text-align: center;
+    font-weight: 100;
   }
   p {
     text-align: center;
@@ -156,10 +157,10 @@ header {
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    height: 500px;
+    height: 600px;
     width: 95%;
     @include desktop {
-      width: 30%;
+      width: 20%;
       background-size: contain;
       margin: 45px;
     }
@@ -185,6 +186,7 @@ header {
     h3 {
       font-size: 16px;
       margin-bottom: 12px;
+      font-weight: 100;
     }
 
     p {
@@ -204,6 +206,7 @@ header {
 
     .description {
       font-size: 14px;
+      font-weight: 600;
     }
 
     .AddToCartButton {

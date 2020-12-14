@@ -203,9 +203,11 @@ header {
   header h1,
   header h2 {
     color: silver;
-    text-align: center; }
+    text-align: center;
+    font-weight: 100; }
   header h2 {
-    font-size: 20px; }
+    font-size: 20px;
+    font-weight: 100; }
 
 .slider {
   width: 100%;
@@ -301,7 +303,8 @@ section {
     height: 100px;
     text-align: center;
     line-height: 100px;
-    background: #ffffff; }
+    background: #ffffff;
+    font-weight: 100; }
   section .producthero {
     width: 100%; }
     @media screen and (min-width: 1024px) {
