@@ -118,7 +118,8 @@
 #checkout-products {
   width: 100%;
   position: relative;
-  min-height: 100vh; }
+  min-height: 80vh;
+  align-items: revert; }
   #checkout-products .checkoutproduct {
     width: 90%;
     height: 250px;
