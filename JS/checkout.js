@@ -24,8 +24,8 @@ function createCheckoutProducts() {
       .html(checkoutProduct.image)
       .appendTo(checkoutContainer);
     $("<h3>").html(checkoutProduct.name).appendTo(checkoutContainer);
-    $("<p>").html(checkoutProduct.price).appendTo(checkoutContainer);
-
+    $("<p>").html(checkoutProduct.price + " " + "SEK").appendTo(checkoutContainer);
+   
     let deleteButton = $("<button>Delete</button>")
       .addClass("deleteButton")
       .html('<i class="fas fa-trash-alt fa-lg"></i>')
@@ -96,7 +96,7 @@ function updateCheckoutTotalPrice() {
     sum += cartProducts[i].count * cartProducts[i].price;
   });
 
-  $("#totalCheckoutPrice").html("Total Price:" + " " + sum + " " + ":-");
+  $("#totalCheckoutPrice").html("Total Price:" + " " + sum + " " + "SEK");
 
   return sum;
 }

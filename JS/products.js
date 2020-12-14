@@ -1,5 +1,5 @@
 let x = 0;
-let y = 1;
+let y = 0;
 
 class Product {
   constructor(name, price, image, description) {
@@ -99,7 +99,15 @@ $(function () {
   notice();
 
   $("#buyButton").on("click", function () {
-    window.location.href = "./../html/checkout.html";
+    if (cartProducts.length <= 0) {
+      alert("Shopping cart is empty");
+    } else {
+      for (let i = 0; i < cartProducts.length; i++) {
+        if (cartProducts.length >= 0) {
+          window.location.href = "./../html/checkout.html";
+        }
+      }
+    }
   });
 
   $("#dialog").dialog({
@@ -143,7 +151,9 @@ function createProduct() {
     $("<h3>").html(product.name).appendTo(container);
     $("<p>")
       .addClass("price")
-      .html(product.price + "" + "SEK")
+
+      .html(product.price + " " + "SEK")
+
       .appendTo(container);
 
     $("<a>")
@@ -250,7 +260,9 @@ function deleteCartProduct(e) {
   for (let i = 0; i < cartProducts.length; i++) {
     if (cartProducts[i].id == e.data.c.id) {
       cartProducts.splice(i, 1);
+      e.data.c.count = 0;
     }
+
     createShoppingCart();
     updateCartTotalPrice();
     notice();
@@ -259,12 +271,26 @@ function deleteCartProduct(e) {
 }
 
 function clickedAddToCart(e) {
-  cartProducts.push(e.data.p);
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (e.data.p.id === cartProducts[i].id) {
+      e.data.p.count++;
+      createShoppingCart();
+      updateCartTotalPrice();
+      addToLocalStorage(cartProducts);
+      notice();
+    }
+  }
 
-  createShoppingCart();
-  updateCartTotalPrice();
-  addToLocalStorage(cartProducts);
-  notice();
+  if (e.data.p.count == 0) {
+    e.data.p.count++;
+    let test = e.data.p;
+    console.log(test);
+    cartProducts.push(e.data.p);
+    createShoppingCart();
+    updateCartTotalPrice();
+    addToLocalStorage(cartProducts);
+    notice();
+  }
 }
 
 function updateCartTotalPrice() {
@@ -274,7 +300,7 @@ function updateCartTotalPrice() {
     sum += cartProducts[i].count * cartProducts[i].price;
   });
 
-  $("#totalPrice").html("Total Price:" + " " + sum + " " + ":-");
+  $("#totalPrice").html("Total Price:" + " " + sum + " " + "SEK");
 
   return sum;
 }
