@@ -4,11 +4,21 @@
 @import "./dropdown.scss";
 
 //* Mobile Device */
+.menu {
+  .active {
+    position: static;
+  }
+}
+
 #checkout-products {
   width: 100%;
   position: relative;
-  min-height: 80vh;
+  min-height: 110vh;
   align-items: revert;
+  @include desktop {
+    min-height: 80vh;
+    margin-top: 60px;
+  }
 
   .checkoutproduct {
     width: 90%;
@@ -18,7 +28,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    margin: 10px;
+    margin: 20px;
     @include desktop {
       width: 80%;
       height: 250px;
@@ -82,6 +92,7 @@
       margin-left: 90px;
       border: none;
       background: transparent;
+      cursor: pointer;
       @include desktop {
         margin-left: 700px;
         border: none;
@@ -132,6 +143,7 @@
         border-radius: 3px;
         width: 30px;
         height: 30px;
+        cursor: pointer;
         @include desktop {
           margin-right: 20px;
           background: $bg-body;
@@ -176,6 +188,7 @@
     padding: 10px;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
     @include desktop {
       margin-right: 10%;
     }
