@@ -113,7 +113,8 @@
   border-right: 10px solid transparent; }
 
 .menu.active {
-  opacity: 1; }
+  opacity: 1;
+  z-index: 9; }
 
 .ui-dialog {
   position: absolute;
