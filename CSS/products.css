@@ -276,6 +276,7 @@ header {
       margin-bottom: 12px; }
     #product-container .product a {
       padding: 10px;
+      margin: 10px;
       text-decoration: none;
       font-weight: bold;
       color: grey; }
