@@ -166,7 +166,8 @@ header {
 
 .cartproduct h3 {
   font-size: 14px;
-  text-align: center; }
+  text-align: center;
+  font-weight: 100; }
 
 .cartproduct p {
   text-align: center;
@@ -244,11 +245,11 @@ header {
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    height: 500px;
+    height: 600px;
     width: 95%; }
     @media screen and (min-width: 1024px) {
       #product-container .product {
-        width: 30%;
+        width: 20%;
         background-size: contain;
         margin: 45px; } }
     #product-container .product .image {
@@ -266,7 +267,8 @@ header {
           transform: scale(1.5); }
     #product-container .product h3 {
       font-size: 16px;
-      margin-bottom: 12px; }
+      margin-bottom: 12px;
+      font-weight: 100; }
     #product-container .product p {
       font-size: 16px;
       margin-bottom: 12px; }
@@ -278,7 +280,8 @@ header {
       #product-container .product a:hover {
         background: lightgrey; }
     #product-container .product .description {
-      font-size: 14px; }
+      font-size: 14px;
+      font-weight: 600; }
     #product-container .product .AddToCartButton {
       border-radius: 2px;
       height: 30px;
