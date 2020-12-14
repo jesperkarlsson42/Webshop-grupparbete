@@ -173,10 +173,11 @@ header {
   margin-bottom: 10px; }
 
 .cartproduct .deleteButton {
-  background: url("../IMG/trash.png");
+  background: url("../img/trash.png");
   display: block;
   width: 30px;
   height: 30px;
+  cursor: pointer;
   text-indent: -999999px;
   background-size: 20px;
   background-repeat: no-repeat;
@@ -195,7 +196,8 @@ header {
     border: none;
     border-radius: 3px;
     margin: 2px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    cursor: pointer; }
 
 #total {
   width: 250px;
@@ -276,7 +278,7 @@ header {
       font-weight: bold;
       color: grey; }
       #product-container .product a:hover {
-        background: lightgrey; }
+        background: #80ddd2; }
     #product-container .product .description {
       font-size: 14px; }
     #product-container .product .AddToCartButton {

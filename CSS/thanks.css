@@ -132,14 +132,23 @@ header {
     margin-top: 100px;
     text-align: center;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 1.5rem;
     white-space: nowrap; }
+    @media screen and (min-width: 1024px) {
+      .thanks h1 {
+        font-size: 3rem; } }
   .thanks p {
     margin: 10px;
     text-align: center;
-    font-size: 1.5rem; }
+    font-size: 1rem; }
+    @media screen and (min-width: 1024px) {
+      .thanks p {
+        font-size: 1.5rem; } }
   .thanks a {
     margin: 10px;
     text-align: center;
     text-decoration: none;
-    color: white; }
+    color: white;
+    padding: 10px; }
+    .thanks a:hover {
+      background: #80ddd2; }

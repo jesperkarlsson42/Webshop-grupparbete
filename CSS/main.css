@@ -178,11 +178,18 @@ nav {
       display: block;
       padding: 0 10px;
       list-style: none; } }
-  @media screen and (min-width: 1024px) {
-    nav a {
-      font-size: 16px;
-      text-decoration: none;
-      color: #ffffff; } }
+  nav a {
+    padding: 10px; }
+    @media screen and (min-width: 1024px) {
+      nav a {
+        font-size: 16px;
+        text-decoration: none;
+        color: #ffffff; } }
+    @media screen and (min-width: 1024px) {
+      nav a:hover {
+        color: black;
+        font-weight: bold;
+        background: #80ddd2; } }
 
 header {
   width: 100%;
@@ -254,8 +261,8 @@ header {
     position: relative; }
   .slider a:active {
     top: 1px; }
-  .slider a:focus {
-    background: #000000; }
+  .slider a:hover {
+    background: grey; }
 
 .author-info {
   background: #000000;

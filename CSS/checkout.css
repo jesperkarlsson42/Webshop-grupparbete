@@ -115,11 +115,18 @@
 .menu.active {
   opacity: 1; }
 
+.menu .active {
+  position: static; }
+
 #checkout-products {
   width: 100%;
   position: relative;
-  min-height: 80vh;
+  min-height: 110vh;
   align-items: revert; }
+  @media screen and (min-width: 1024px) {
+    #checkout-products {
+      min-height: 80vh;
+      margin-top: 60px; } }
   #checkout-products .checkoutproduct {
     width: 90%;
     height: 250px;
@@ -128,7 +135,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    margin: 10px; }
+    margin: 20px; }
     @media screen and (min-width: 1024px) {
       #checkout-products .checkoutproduct {
         width: 80%;
@@ -182,7 +189,8 @@
     #checkout-products .checkoutproduct .deleteButton {
       margin-left: 90px;
       border: none;
-      background: transparent; }
+      background: transparent;
+      cursor: pointer; }
       @media screen and (min-width: 1024px) {
         #checkout-products .checkoutproduct .deleteButton {
           margin-left: 700px;
@@ -223,7 +231,8 @@
         border: none;
         border-radius: 3px;
         width: 30px;
-        height: 30px; }
+        height: 30px;
+        cursor: pointer; }
         @media screen and (min-width: 1024px) {
           #checkout-products .checkoutproduct .counterdiv .subbtn,
           #checkout-products .checkoutproduct .counterdiv .addbtn {
@@ -261,7 +270,8 @@
     margin-bottom: 20px;
     padding: 10px;
     border: none;
-    border-radius: 6px; }
+    border-radius: 6px;
+    cursor: pointer; }
     @media screen and (min-width: 1024px) {
       #totalCheckout #userInfoButton {
         margin-right: 10%; } }

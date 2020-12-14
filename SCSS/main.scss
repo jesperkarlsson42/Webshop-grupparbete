@@ -70,10 +70,18 @@ nav {
     }
   }
   a {
+    padding: 10px;
     @include desktop {
       font-size: $font-main;
       text-decoration: none;
       color: $font-white;
+    }
+    &:hover {
+      @include desktop {
+        color: black;
+        font-weight: bold;
+        background: #80ddd2;
+      }
     }
   }
 }
@@ -166,8 +174,8 @@ header {
     top: 1px;
   }
 
-  a:focus {
-    background: $bg-black;
+  a:hover {
+    background: grey;
   }
 }
 
