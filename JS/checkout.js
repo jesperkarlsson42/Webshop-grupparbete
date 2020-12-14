@@ -3,10 +3,10 @@ let listOfTotalCheckout = [];
 $(function () {
   getCartFromLocalStorage();
   updateCheckoutTotalPrice();
-  
-  $('#userInfoButton').on('click', function() {
+
+  $("#userInfoButton").on("click", function () {
     window.location.href = "./../html/userinfo.html";
-  })
+  });
 });
 
 function createCheckoutProducts() {
@@ -25,10 +25,10 @@ function createCheckoutProducts() {
       .appendTo(checkoutContainer);
     $("<h3>").html(checkoutProduct.name).appendTo(checkoutContainer);
     $("<p>").html(checkoutProduct.price + " " + "SEK").appendTo(checkoutContainer);
-    
+   
     let deleteButton = $("<button>Delete</button>")
       .addClass("deleteButton")
-      .html('<i class="fas fa-trash-alt"></i>')
+      .html('<i class="fas fa-trash-alt fa-lg"></i>')
       .appendTo(checkoutContainer);
     deleteButton.on("click", { c: checkoutProduct }, deleteFromCheckout);
 
@@ -42,7 +42,7 @@ function createCheckoutProducts() {
       .html(checkoutProduct.count)
       .appendTo(displayCounter);
 
-      let minus = $("<button>-</button>")
+    let minus = $("<button>-</button>")
       .addClass("subbtn")
       .html('<i class="fas fa-minus-circle"></i>')
       .on("click", { c: checkoutProduct }, subtractOneProduct);
@@ -86,7 +86,6 @@ function subtractOneProduct(e) {
     }
     createCheckoutProducts();
     updateCheckoutTotalPrice();
-    
   }
 }
 

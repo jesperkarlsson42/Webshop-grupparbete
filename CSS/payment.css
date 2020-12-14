@@ -91,7 +91,7 @@
       padding: 10px;
       display: block;
       font-size: 12px;
-      font-weight: bold;
+      font-weight: 100;
       color: black;
       transition: all 0.2s linear;
       text-decoration: none; }
@@ -113,7 +113,8 @@
   border-right: 10px solid transparent; }
 
 .menu.active {
-  opacity: 1; }
+  opacity: 1;
+  z-index: 9; }
 
 #paymentbody {
   margin: 20px;
@@ -151,7 +152,8 @@
       margin: 0 0 40px;
       padding: 0;
       color: #000000;
-      font-size: 24px; }
+      font-size: 24px;
+      font-weight: 100; }
     #paymentbody .payment-container #submitForm h2 {
       margin: 0 0 20px;
       margin-top: 60px;
@@ -203,7 +205,7 @@
       margin-top: 20px;
       border: none; }
     #paymentbody .payment-container button:hover {
-      background: green; }
+      background: #80ddd2; }
     #paymentbody .payment-container .card {
       width: 100%; }
     #paymentbody .payment-container .expiration {

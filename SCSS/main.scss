@@ -70,10 +70,18 @@ nav {
     }
   }
   a {
+    padding: 10px;
     @include desktop {
       font-size: $font-main;
       text-decoration: none;
       color: $font-white;
+    }
+    &:hover {
+      @include desktop {
+        color: black;
+        font-weight: bold;
+        background: #80ddd2;
+      }
     }
   }
 }
@@ -90,10 +98,12 @@ header {
   h2 {
     color: rgb(192, 192, 192);
     text-align: center;
+    font-weight: 100;
   }
 
   h2 {
     font-size: 20px;
+    font-weight: 100;
   }
 }
 
@@ -166,8 +176,8 @@ header {
     top: 1px;
   }
 
-  a:focus {
-    background: $bg-black;
+  a:hover {
+    background: grey;
   }
 }
 
@@ -208,6 +218,7 @@ section {
     text-align: center;
     line-height: 100px;
     background: $font-white;
+    font-weight: 100;
   }
 
   .producthero {
@@ -234,6 +245,7 @@ section {
     p {
       line-height: 30px;
       margin: 30px;
+      font-weight: 600;
     }
   }
 }

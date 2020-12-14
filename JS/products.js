@@ -18,7 +18,7 @@ let listOfTotal = [];
 
 let p1 = new Product(
   "Rolex",
-  14245,
+  86890,
   "<img src='./../img/rolexsilver.jpg'/>",
   "Rolex presents the new generation of its Oyster Perpetual watches and brings a new model to the range, the Oyster Perpetual 41, as well as versions of the Oyster Perpetual 36 displaying dials in vivid colours. The light reflections on the case sides highlight the elegant profile of the Oyster case, which is made from Oystersteel. Measuring 41 mm or 36 mm respectively, it is fitted with a domed bezel."
 );
@@ -77,6 +77,20 @@ let p10 = new Product(
   "A collaborative design project that partners German design with British fashion. Braun and Paul Smith have teamed up on a limited-edition clock and watch project. Paul Smith is one of Britain’s foremost designers, renowned for his creative spirit, which combines tradition and modernity."
 );
 
+let p11 = new Product(
+  "Omega",
+  16305,
+  "<img src='./../img/omega.jpg'/>",
+  " The OMEGA Speedmaster is one of OMEGA’s most iconic timepieces. Having been a part of all six lunar missions, the legendary Speedmaster is an impressive representation of the brand’s adventurous pioneering spirit."
+);
+
+let p12 = new Product(
+  "Oris",
+  52900,
+  "<img src='./../img/oris.jpg'/>",
+  "The Aquis collection of diver’s watches offers real-world functionality in an innovative package, through a combination of considered design, high-performance materials and fit-for-purpose functions."
+);
+
 $(function () {
   addProduct();
   createProduct();
@@ -126,7 +140,7 @@ $(function () {
 });
 
 function addProduct() {
-  products.push(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
+  products.push(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12);
 }
 
 function createProduct() {
@@ -137,7 +151,9 @@ function createProduct() {
     $("<h3>").html(product.name).appendTo(container);
     $("<p>")
       .addClass("price")
+
       .html(product.price + " " + "SEK")
+
       .appendTo(container);
 
     $("<a>")

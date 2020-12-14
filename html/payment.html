@@ -20,12 +20,16 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./../css/main.css" />
     <link rel="stylesheet" href="./../css/payment.css" />
     <link href="./../css/dropdown.css" rel="stylesheet" />
   </head>
 
-  <body> 
+  <body>
     <!--Nav-->
     <nav>
       <img src="./../img/logo-watchout.svg" id="logotype" />
@@ -58,7 +62,6 @@
         <li><a href="./../index.html">About</a></li>
         <li><a href="#footer">Contact</a></li>
       </ul>
-      <img src="./../img/basket-icon.png"></li>
     </nav>
 
     <!--Header - Name, Slogan-->
@@ -70,65 +73,65 @@
     <!--Payment Refactoring-->
     <div id="paymentbody">
       <div class="payment-container">
-      <h1>Select payment option</h1>
+        <h1>Select payment option</h1>
         <form id="submitForm">
           <h2>Name</h2>
-            <div>
-              <input
-                type="text"
-                id="form-fname"
-                name=""
-                placeholder="John"
-                required=""
-              />
-              <label>Firstname</label>
-            </div>
-            <div>
-              <input
-                type="text"
-                id="form-lname"
-                name=""
-                placeholder="Doe"
-                required=""
-              />
-              <span id="lname-error-message" class="error-form"></span>
-              <label>Lastname</label>
-            </div>
+          <div>
+            <input
+              type="text"
+              id="form-fname"
+              name=""
+              placeholder="John"
+              required=""
+            />
+            <label>Firstname</label>
+          </div>
+          <div>
+            <input
+              type="text"
+              id="form-lname"
+              name=""
+              placeholder="Doe"
+              required=""
+            />
+            <span id="lname-error-message" class="error-form"></span>
+            <label>Lastname</label>
+          </div>
           <h2>Card number</h2>
-            <div>
-              <input
-                type="number"
-                id="cardNumber"
-                placeholder="1111222233334444"
-                required=""
-              />
-              <span id="cardnumber-error-message" class="error-form"></span>
-              <label>Card Number</label>
-            </div>
+          <div>
+            <input
+              type="number"
+              id="cardNumber"
+              placeholder="1111222233334444"
+              required=""
+            />
+            <span id="cardnumber-error-message" class="error-form"></span>
+            <label>Card Number</label>
+          </div>
           <h2>Expiration date</h2>
-            <div>
-              <input type="number" id="month" placeholder="01" required="" />
-              <span id="month-error-message" class="error-form"></span>
-              <label>Month</label>
-            </div>
-            <div>
-              <input type="number" id="year" placeholder="20" required="" />
-              <span id="year-error-message" class="error-form"></span>
-              <label>Year</label>
-            </div>
+          <div>
+            <input type="number" id="month" placeholder="01" required="" />
+            <span id="month-error-message" class="error-form"></span>
+            <label>Month</label>
+          </div>
+          <div>
+            <input type="number" id="year" placeholder="20" required="" />
+            <span id="year-error-message" class="error-form"></span>
+            <label>Year</label>
+          </div>
           <h2>CVC</h2>
-            <div>
-              <input type="number" id="cvc" placeholder="123" required="" />
-              <span id="cvc-error-message" class="error-form"></span>
-              <label>CVC</label>
-            </div>
+          <div>
+            <input type="number" id="cvc" placeholder="123" required="" />
+            <span id="cvc-error-message" class="error-form"></span>
+            <label>CVC</label>
+          </div>
         </form>
         <button type="submit" id="payment-btn">Confirm Payment</button>
       </div>
     </div>
 
     <!--Footer - Contact info, Social Media-->
-    <footer id = "footer">
+    <footer id="footer">
       <div class="contactinfo">
         <p>WatchOut AB</p>
         <p>Tel : 0 702 123 456</p>

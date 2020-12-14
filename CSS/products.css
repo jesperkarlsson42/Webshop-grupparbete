@@ -91,7 +91,7 @@
       padding: 10px;
       display: block;
       font-size: 12px;
-      font-weight: bold;
+      font-weight: 100;
       color: black;
       transition: all 0.2s linear;
       text-decoration: none; }
@@ -113,7 +113,8 @@
   border-right: 10px solid transparent; }
 
 .menu.active {
-  opacity: 1; }
+  opacity: 1;
+  z-index: 9; }
 
 .ui-dialog {
   position: absolute;
@@ -166,17 +167,19 @@ header {
 
 .cartproduct h3 {
   font-size: 14px;
-  text-align: center; }
+  text-align: center;
+  font-weight: 100; }
 
 .cartproduct p {
   text-align: center;
   margin-bottom: 10px; }
 
 .cartproduct .deleteButton {
-  background: url("../IMG/trash.png");
+  background: url("../img/trash.png");
   display: block;
   width: 30px;
   height: 30px;
+  cursor: pointer;
   text-indent: -999999px;
   background-size: 20px;
   background-repeat: no-repeat;
@@ -195,7 +198,8 @@ header {
     border: none;
     border-radius: 3px;
     margin: 2px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    cursor: pointer; }
 
 #total {
   width: 250px;
@@ -244,11 +248,11 @@ header {
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    height: 500px;
+    height: 600px;
     width: 95%; }
     @media screen and (min-width: 1024px) {
       #product-container .product {
-        width: 30%;
+        width: 20%;
         background-size: contain;
         margin: 45px; } }
     #product-container .product .image {
@@ -266,19 +270,22 @@ header {
           transform: scale(1.5); }
     #product-container .product h3 {
       font-size: 16px;
-      margin-bottom: 12px; }
+      margin-bottom: 12px;
+      font-weight: 100; }
     #product-container .product p {
       font-size: 16px;
       margin-bottom: 12px; }
     #product-container .product a {
       padding: 10px;
+      margin: 10px;
       text-decoration: none;
       font-weight: bold;
       color: grey; }
       #product-container .product a:hover {
-        background: lightgrey; }
+        background: #80ddd2; }
     #product-container .product .description {
-      font-size: 14px; }
+      font-size: 14px;
+      font-weight: 600; }
     #product-container .product .AddToCartButton {
       border-radius: 2px;
       height: 30px;

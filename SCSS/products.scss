@@ -65,6 +65,7 @@ header {
   h3 {
     font-size: 14px;
     text-align: center;
+    font-weight: 100;
   }
   p {
     text-align: center;
@@ -72,11 +73,11 @@ header {
   }
 
   .deleteButton {
-    background: url("../IMG/trash.png");
+    background: url("../img/trash.png");
     display: block;
     width: 30px;
     height: 30px;
-
+    cursor: pointer;
     text-indent: -999999px;
     background-size: 20px;
     background-repeat: no-repeat;
@@ -98,6 +99,7 @@ header {
       border-radius: 3px;
       margin: 2px;
       margin-bottom: 20px;
+      cursor: pointer;
     }
   }
 }
@@ -155,10 +157,10 @@ header {
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    height: 500px;
+    height: 600px;
     width: 95%;
     @include desktop {
-      width: 30%;
+      width: 20%;
       background-size: contain;
       margin: 45px;
     }
@@ -184,6 +186,7 @@ header {
     h3 {
       font-size: 16px;
       margin-bottom: 12px;
+      font-weight: 100;
     }
 
     p {
@@ -193,16 +196,18 @@ header {
 
     a {
       padding: 10px;
+      margin: 10px;
       text-decoration: none;
       font-weight: bold;
       color: grey;
       &:hover {
-        background: lightgrey;
+        background: #80ddd2;
       }
     }
 
     .description {
       font-size: 14px;
+      font-weight: 600;
     }
 
     .AddToCartButton {
@@ -220,11 +225,11 @@ header {
 
 .amount {
   color: #ffffff;
-    background-color: red;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    position: absolute;
-    top: 5px;
-    right: 20px;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 20px;
 }
