@@ -127,7 +127,7 @@ function createProduct() {
 
     $("<div>").addClass("image").html(product.image).appendTo(container);
     $("<h3>").html(product.name).appendTo(container);
-    $("<p>").addClass("price").html(product.price).appendTo(container);
+    $("<p>").addClass("price").html(product.price + "" + "SEK").appendTo(container);
 
     $("<a>")
       .attr("href", "javascript:;")
