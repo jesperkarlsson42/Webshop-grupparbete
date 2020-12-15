@@ -32,7 +32,7 @@ let p3 = new Product(
   "Timex",
   1395,
   "<img src='./../img/timexbrown.jpg'/>",
-  "Metropolitan R has all the functionality you need including up to 2 weeks of battery life. This sleek design boasts an impressive AMOLED display that you can customize with over 20+ dial designs. Plus, 24/7 activity and sleep tracking for your health and fitness goals, on-board GPS, optical heart rate sensor, notifications and much more. This is the perfect smartwatch to fit your busy lifestyle. The brown leather and silicone combination strap is complemented by a black metal case and scratch-resistant Gorilla Glass™ lens."
+  "Metropolitan R has all the functionality you need including up to 2 weeks of battery life. This sleek design boasts an impressive AMOLED display that you can customize with over 20+ dial designs. Plus, 24/7 activity and sleep tracking for your health and fitness goals, on-board GPS, optical heart rate sensor, notifications and much more. This is the perfect smartwatch to fit your busy lifestyle. "
 );
 let p4 = new Product(
   "Longines",
@@ -98,6 +98,22 @@ $(function () {
   updateCartTotalPrice();
   notice();
 
+  $("#sortButton").on("click", function () {
+    products.sort((a, b) => {
+      if (a.price > b.price) {
+        return 1;
+      }
+
+      if (a.price < b.price) {
+        return -1;
+      }
+
+      return 0;
+    });
+
+    createProduct();
+  });
+
   $("#buyButton").on("click", function () {
     if (cartProducts.length <= 0) {
       alert("Shopping cart is empty");
@@ -137,13 +153,6 @@ $(function () {
       $("#dialog").dialog("close");
     }
   });
-
-  $(".description").hide();
-  $(".show_hide").on("click", function () {
-    let txt = $(".description").is(":visible") ? "Read More" : "Read Less";
-    $(".show_hide").text(txt);
-    $(this).next(".description").slideToggle(200);
-  });
 });
 
 function addProduct() {
@@ -151,6 +160,10 @@ function addProduct() {
 }
 
 function createProduct() {
+  let productlist = document.getElementById("product-container");
+
+  productlist.innerHTML = "";
+
   $.each(products, (i, product) => {
     let container = $("<div>").addClass("product").attr("id", product.id);
 
@@ -180,6 +193,13 @@ function createProduct() {
     addToCartButtons.on("click", { p: product }, clickedAddToCart);
 
     container.appendTo($("#product-container"));
+  });
+
+  $(".description").hide();
+  $(".show_hide").on("click", function () {
+    let txt = $(".description").is(":visible") ? "Read More" : "Read Less";
+    $(".show_hide").text(txt);
+    $(this).next(".description").slideToggle(200);
   });
 }
 
@@ -334,21 +354,21 @@ function notice() {
   }
 }
 
-function sort() {
-  products.sort((a, b) => {
-    if (a.price > b.price) {
-      return 1;
-    }
+// function sort() {
+//   products.sort((a, b) => {
+//     if (a.price > b.price) {
+//       return 1;
+//     }
 
-    if (a.price < b.price) {
-      return -1;
-    }
+//     if (a.price < b.price) {
+//       return -1;
+//     }
 
-    return 0;
-  });
+//     return 0;
+//   });
 
-  createProduct();
-}
+//   createProduct();
+// }
 
 function addToLocalStorage(cartProducts) {
   localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
