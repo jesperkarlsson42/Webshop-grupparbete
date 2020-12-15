@@ -110,6 +110,13 @@ $(function () {
     }
   });
 
+  $("#clearproducts").on("click", function () {
+    localStorage.clear();
+    cartProducts = [];
+    createShoppingCart();
+    updateCartTotalPrice();
+  });
+
   $("#dialog").dialog({
     autoOpen: false,
     position: { my: "right top", at: "right top", of: window },
@@ -191,7 +198,9 @@ function createShoppingCart() {
       .html(cartProduct.image)
       .appendTo(shoppingCartContainer);
     $("<h3>").html(cartProduct.name).appendTo(shoppingCartContainer);
-    $("<p>").html(cartProduct.price).appendTo(shoppingCartContainer);
+    $("<p>")
+      .html(cartProduct.price + " " + "SEK")
+      .appendTo(shoppingCartContainer);
     let deleteButton = $("<button>Delete</button>")
       .addClass("deleteButton")
       .appendTo(shoppingCartContainer);
@@ -305,19 +314,6 @@ function updateCartTotalPrice() {
   return sum;
 }
 
-function addToLocalStorage(cartProducts) {
-  localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
-  createShoppingCart(cartProducts);
-}
-
-function getFromLocalStorage() {
-  let cartProductFromLS = localStorage.getItem("cartProducts");
-  if (cartProductFromLS) {
-    cartProducts = JSON.parse(cartProductFromLS);
-    createShoppingCart(cartProducts);
-  }
-}
-
 function notice() {
   let amount = 0;
   if (cartProducts.length <= 0) {
@@ -335,5 +331,34 @@ function notice() {
       let noticeAmount = $("<p>").addClass("amount").html(total);
       noticeAmount.appendTo(totalamount);
     }
+  }
+}
+
+function sort() {
+  products.sort((a, b) => {
+    if (a.price > b.price) {
+      return 1;
+    }
+
+    if (a.price < b.price) {
+      return -1;
+    }
+
+    return 0;
+  });
+
+  createProduct();
+}
+
+function addToLocalStorage(cartProducts) {
+  localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+  createShoppingCart(cartProducts);
+}
+
+function getFromLocalStorage() {
+  let cartProductFromLS = localStorage.getItem("cartProducts");
+  if (cartProductFromLS) {
+    cartProducts = JSON.parse(cartProductFromLS);
+    createShoppingCart(cartProducts);
   }
 }

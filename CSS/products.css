@@ -120,6 +120,19 @@
   position: absolute;
   top: 60px !important; }
 
+#clearproducts {
+  height: 30px;
+  width: 110px;
+  margin: 10px;
+  font-size: smaller;
+  color: #ffffff;
+  background: grey;
+  font-family: default;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer; }
+
 #opener {
   display: inline-block;
   border: none;
@@ -225,6 +238,20 @@ header {
     border: none;
     border-radius: 6px;
     cursor: pointer; }
+
+.form-control {
+  height: 40px;
+  width: 160px;
+  margin: 10px;
+  padding: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #242424;
+  font-family: default;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer; }
 
 #product-container {
   display: flex;
