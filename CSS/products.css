@@ -239,11 +239,10 @@ header {
     border-radius: 6px;
     cursor: pointer; }
 
-.form-control {
+#sortButton {
   height: 40px;
-  width: 160px;
+  width: 70px;
   margin: 10px;
-  padding: 10px;
   font-weight: bold;
   color: #ffffff;
   background: #242424;
