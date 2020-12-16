@@ -5,11 +5,13 @@
 
 #userinfo-container {
   width: 100%;
+  font-weight: bold;
   @include default-flex;
 
   h1 {
     line-height: 30px;
     padding-top: 20px;
+    font-weight: bold;
   }
 
   #userform {
@@ -74,6 +76,7 @@
       color: $font-white;
       float: right;
       cursor: pointer;
+      font-weight: bold;
     }
   }
 }
