@@ -118,12 +118,14 @@
 
 #userinfo-container {
   width: 100%;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center; }
   #userinfo-container h1 {
     line-height: 30px;
-    padding-top: 20px; }
+    padding-top: 20px;
+    font-weight: bold; }
   #userinfo-container #userform {
     width: 80%;
     background: #ffffff;
@@ -176,4 +178,5 @@
       background: #242424;
       color: #ffffff;
       float: right;
-      cursor: pointer; }
+      cursor: pointer;
+      font-weight: bold; }

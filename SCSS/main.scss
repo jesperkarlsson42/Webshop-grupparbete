@@ -94,16 +94,18 @@ header {
   background: $bg-head;
   margin-bottom: 20px;
 
+  span {
+    color: rgb(97, 96, 96);
+  }
+
   h1,
   h2 {
     color: rgb(192, 192, 192);
     text-align: center;
-    font-weight: 100;
   }
 
   h2 {
     font-size: 20px;
-    font-weight: 100;
   }
 }
 

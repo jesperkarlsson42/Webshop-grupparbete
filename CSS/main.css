@@ -201,14 +201,14 @@ header {
   flex-direction: column;
   background: #242424;
   margin-bottom: 20px; }
+  header span {
+    color: #616060; }
   header h1,
   header h2 {
     color: silver;
-    text-align: center;
-    font-weight: 100; }
+    text-align: center; }
   header h2 {
-    font-size: 20px;
-    font-weight: 100; }
+    font-size: 20px; }
 
 .slider {
   width: 100%;

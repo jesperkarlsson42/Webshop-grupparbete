@@ -13,6 +13,7 @@
   width: 110px;
   margin: 10px;
   font-size: smaller;
+  font-weight: bold;
   color: $font-white;
   background: grey;
   font-family: default;
@@ -79,11 +80,12 @@ header {
   h3 {
     font-size: 14px;
     text-align: center;
-    font-weight: 100;
+    font-weight: bold;
   }
   p {
     text-align: center;
     margin-bottom: 10px;
+    font-weight: bold;
   }
 
   .deleteButton {
@@ -102,18 +104,21 @@ header {
 
   .counterdiv {
     text-align: center;
+    .activeCount {
+      font-weight: bold;
+    }
 
     .subbtn,
     .addbtn {
-      width: 20px;
-      height: 20px;
       color: #000000;
-      background: #e9e9e9;
       border: none;
       border-radius: 3px;
       margin: 2px;
       margin-bottom: 20px;
       cursor: pointer;
+      background: #dee2e6;
+      width: 30px;
+      height: 30px;
     }
   }
 }
@@ -131,6 +136,7 @@ header {
     display: block;
     margin: 0;
     padding: 0;
+    font-weight: bold;
   }
 
   #buyButton {
@@ -142,6 +148,7 @@ header {
     background: $bg-head;
     font-family: default;
     font-family: "Montserrat", sans-serif;
+    font-weight: bold;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -248,6 +255,7 @@ header {
       color: $font-white;
       border: none;
       margin-bottom: 20px;
+      font-weight: bold;
     }
   }
 }

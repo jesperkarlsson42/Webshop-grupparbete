@@ -237,12 +237,14 @@ function createShoppingCart() {
       .appendTo(displayCounter);
 
     let minus = $("<button>-</button>")
+      .html('<i class="fas fa-minus-circle"></i>')
       .addClass("subbtn")
       .on("click", { c: cartProduct }, subtractOneProduct);
     minus.appendTo(counterdiv);
 
     let add = $("<button>+</button>")
       .addClass("addbtn")
+      .html('<i class="fas fa-plus-circle"></i>')
       .on("click", { c: cartProduct }, addOneProduct);
     add.appendTo(counterdiv);
 
@@ -353,22 +355,6 @@ function notice() {
     }
   }
 }
-
-// function sort() {
-//   products.sort((a, b) => {
-//     if (a.price > b.price) {
-//       return 1;
-//     }
-
-//     if (a.price < b.price) {
-//       return -1;
-//     }
-
-//     return 0;
-//   });
-
-//   createProduct();
-// }
 
 function addToLocalStorage(cartProducts) {
   localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
