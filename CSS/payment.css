@@ -153,7 +153,7 @@
       padding: 0;
       color: #000000;
       font-size: 30px;
-      font-weight: 100; }
+      font-weight: bold; }
     #paymentbody .payment-container #submitForm h2 {
       margin: 0 0 20px;
       margin-top: 60px;
@@ -171,6 +171,10 @@
       border: none;
       border-bottom: 1px solid #808080;
       font-weight: bold; }
+    #paymentbody .payment-container #submitForm label {
+      font-weight: bold;
+      color: grey;
+      font-style: italic; }
     #paymentbody .payment-container #submitForm form div {
       position: relative; }
     #paymentbody .payment-container #submitForm form div label {
@@ -178,7 +182,8 @@
       top: 3px;
       pointer-events: none;
       left: 0;
-      transition: 0.5s; }
+      transition: 0.5s;
+      font-weight: bold; }
     #paymentbody .payment-container #submitForm input:focus ~ label,
     #paymentbody .payment-container #submitForm input:valid ~ label {
       left: 0;
