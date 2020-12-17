@@ -42,7 +42,7 @@
       padding: 0;
       color: $bg-black;
       font-size: 30px;
-      font-weight: 100;
+      font-weight: bold;
     }
 
     #submitForm {
@@ -67,6 +67,12 @@
         font-weight: bold;
       }
 
+      label {
+        font-weight: bold;
+        color: grey;
+        font-style: italic;
+      }
+
       form div {
         position: relative;
       }
@@ -77,6 +83,7 @@
         pointer-events: none;
         left: 0;
         transition: 0.5s;
+        font-weight: bold;
       }
 
       input:focus ~ label,
