@@ -245,9 +245,9 @@ header {
     border-radius: 6px;
     cursor: pointer; }
 
-#sortButton {
+.form-control {
   height: 40px;
-  width: 70px;
+  width: 120px;
   margin: 10px;
   font-weight: bold;
   color: #ffffff;
