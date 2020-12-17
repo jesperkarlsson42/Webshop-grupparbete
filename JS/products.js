@@ -98,21 +98,45 @@ $(function () {
   updateCartTotalPrice();
   notice();
 
-  $("#sortButton").on("click", function () {
-    products.sort((a, b) => {
-      if (a.price > b.price) {
-        return 1;
-      }
+  let select = $(".form-control");
 
-      if (a.price < b.price) {
-        return -1;
-      }
+  $(select).on("change", function (e) {
+    console.log($(this).val());
+    if ($(this).val() == "l2h") {
+      products.sort((a, b) => {
+        if (a.price > b.price) {
+          return 1;
+        }
 
-      return 0;
-    });
+        if (a.price < b.price) {
+          return -1;
+        }
 
+        return 0;
+      });
+
+      createProduct();
+    } else if ($(this).val() == "h2l") {
+      products.reverse();
+    }
     createProduct();
   });
+
+  // $("#sortButton").on("click", function () {
+  //   products.sort((a, b) => {
+  //     if (a.price > b.price) {
+  //       return 1;
+  //     }
+
+  //     if (a.price < b.price) {
+  //       return -1;
+  //     }
+
+  //     return 0;
+  //   });
+
+  //   createProduct();
+  // });
 
   $("#buyButton").on("click", function () {
     if (cartProducts.length <= 0) {
