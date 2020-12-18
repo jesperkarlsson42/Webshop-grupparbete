@@ -247,7 +247,7 @@ header {
 
 .form-control {
   height: 40px;
-  width: 120px;
+  width: 140px;
   margin: 10px;
   font-weight: bold;
   color: #ffffff;
@@ -257,6 +257,14 @@ header {
   border: none;
   border-radius: 6px;
   cursor: pointer; }
+  .form-control option {
+    font-weight: bold; }
+    .form-control option:checked {
+      box-shadow: 0 0 10px 100px #000 inset; }
+    .form-control option:hover {
+      box-shadow: 0 0 10px 100px #000 inset; }
+  .form-control:focus > option:checked {
+    background: #80ddd2 !important; }
 
 #product-container {
   display: flex;
