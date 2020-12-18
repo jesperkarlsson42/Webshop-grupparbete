@@ -157,7 +157,7 @@ header {
 
 .form-control {
   height: 40px;
-  width: 120px;
+  width: 140px;
   margin: 10px;
   font-weight: bold;
   color: $font-white;
@@ -167,6 +167,22 @@ header {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  option {
+    font-weight: bold;
+    &:checked {
+      box-shadow: 0 0 10px 100px #000 inset;
+    }
+    &:hover {
+      box-shadow: 0 0 10px 100px #000 inset;
+    }
+  }
+  &:focus {
+    > option {
+      &:checked {
+        background: #80ddd2 !important;
+      }
+    }
+  }
 }
 
 #product-container {
