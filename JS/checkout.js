@@ -83,6 +83,7 @@ function subtractOneProduct(e) {
     }
     if (cartProducts[i].count < 1) {
       cartProducts.splice(i, 1);
+      ifCheckoutIsEmpty();
     }
     createCheckoutProducts();
     updateCheckoutTotalPrice();
@@ -116,5 +117,16 @@ function deleteFromCheckout(e) {
     }
     createCheckoutProducts();
     updateCheckoutTotalPrice();
+    ifCheckoutIsEmpty();
+  }
+}
+
+function ifCheckoutIsEmpty() {
+  if(cartProducts.length == 0) {
+    window.location.href = "./../html/products.html";
+    localStorage.clear();
+  }
+  else {
+    return false;
   }
 }
