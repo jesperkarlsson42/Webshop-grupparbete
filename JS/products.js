@@ -243,20 +243,24 @@ function createShoppingCart() {
   $.each(cartProducts, (i, cartProduct) => {
     let shoppingCartContainer = $("<div>")
       .addClass("cartproduct")
-      .attr("id", cartProduct.id);
+      .attr("id", cartProducts[i].product.id);
 
     $("<div>")
       .addClass("image")
-      .html(cartProduct.image)
+      .html(cartProducts[i].product.image)
       .appendTo(shoppingCartContainer);
-    $("<h3>").html(cartProduct.name).appendTo(shoppingCartContainer);
+    $("<h3>")
+      .html(cartProducts[i].product.name)
+      .appendTo(shoppingCartContainer);
     $("<p>")
-      .html(cartProduct.price + " " + "SEK")
+      .html(cartProducts[i].product.price + " " + "SEK")
       .appendTo(shoppingCartContainer);
     let deleteButton = $("<button>Delete</button>")
       .addClass("deleteButton")
       .appendTo(shoppingCartContainer);
-    deleteButton.on("click", { c: cartProduct }, deleteCartProduct);
+    deleteButton.on("click", () => {
+      deleteCartProduct(cartProducts[i]);
+    });
 
     let counterdiv = $("<div>")
       .addClass("counterdiv")
@@ -265,34 +269,39 @@ function createShoppingCart() {
     let displayCounter = $("<div>").addClass("counter").appendTo(counterdiv);
     $("<p>")
       .addClass("activeCount")
-      .html(cartProduct.count)
+      .html(cartProducts[i].qty)
       .appendTo(displayCounter);
 
     let minus = $("<button>-</button>")
       .html('<i class="fas fa-minus-circle"></i>')
       .addClass("subbtn")
-      .on("click", { c: cartProduct }, subtractOneProduct);
+      .on("click", () => {
+        subtractOneProduct(cartProducts[i]);
+      })
     minus.appendTo(counterdiv);
 
     let add = $("<button>+</button>")
       .addClass("addbtn")
       .html('<i class="fas fa-plus-circle"></i>')
-      .on("click", { c: cartProduct }, addOneProduct);
-    add.appendTo(counterdiv);
+      .on("click", () => {
+        addOneProduct(cartProducts[i]);
+      })
+    .appendTo(counterdiv);
 
     shoppingCartContainer.appendTo($("#shoppingCart-container"));
   });
 }
 
-function addOneProduct(e) {
+function addOneProduct(cartProduct) {
   for (let i = 0; i < cartProducts.length; i++) {
-    if (cartProducts[i].id == e.data.c.id) {
-      cartProducts[i].count++;
+    if (cartProducts[i].product.id == cartProduct.product.id) {
+      console.log('1');
+      cartProducts[i].qty++;
       createShoppingCart();
     }
-    if (cartProducts[i].count > 1) {
-      let tempsum = cartProducts[i].count * 1;
-      let total = tempsum * parseInt(cartProducts[i].price);
+    if (cartProducts[i].product.qty > 1) {
+      let tempsum = cartProducts[i].product.qty * 1;
+      let total = tempsum * parseInt(cartProducts[i].product.price);
       listOfTotal.push(total);
       updateCartTotalPrice();
       addToLocalStorage(cartProducts);
@@ -304,13 +313,14 @@ function addOneProduct(e) {
   }
 }
 
-function subtractOneProduct(e) {
+function subtractOneProduct(cartProduct) {
   for (let i = 0; i < cartProducts.length; i++) {
-    if (cartProducts[i].id == e.data.c.id) {
-      cartProducts[i].count--;
+    if (cartProducts[i].product.id == cartProduct.product.id) {
+      cartProducts[i].qty--;
     }
-    if (cartProducts[i].count < 1) {
+    if (cartProducts[i].qty < 1) {
       cartProducts.splice(i, 1);
+      cartProduct.product.inCart = false;
     }
     createShoppingCart();
     updateCartTotalPrice();
@@ -319,19 +329,35 @@ function subtractOneProduct(e) {
   }
 }
 
-function deleteCartProduct(e) {
-  for (let i = 0; i < cartProducts.length; i++) {
-    if (cartProducts[i].id == e.data.c.id) {
-      cartProducts.splice(i, 1);
-      e.data.c.count = 0;
-    }
+function deleteCartProduct(cartProduct) {
 
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].product.id == cartProduct.product.id) {
+      cartProducts.splice(i, 1);
+      cartProduct.product.inCart = false;
+      
+      console.log(cartProducts);
+    }
     createShoppingCart();
     updateCartTotalPrice();
     notice();
     addToLocalStorage(cartProducts);
   }
 }
+
+// function deleteCartProduct(e) {
+//   for (let i = 0; i < cartProducts.length; i++) {
+//     if (cartProducts[i].id == e.data.c.id) {
+//       cartProducts.splice(i, 1);
+//       e.data.c.count = 0;
+//     }
+
+//     createShoppingCart();
+//     updateCartTotalPrice();
+//     notice();
+//     addToLocalStorage(cartProducts);
+//   }
+// }
 
 function clickedAddToCart(product) {
   for (let i = 0; i < products.length; i++) {
@@ -342,14 +368,20 @@ function clickedAddToCart(product) {
 
         console.log(cartProducts);
 
-        // createShoppingCart();
-        // updateCartTotalPrice();
-        // addToLocalStorage(cartProducts);
-        // notice();
-
+        createShoppingCart();
+        updateCartTotalPrice();
+        addToLocalStorage(cartProducts);
+        notice();
       } else if (product.inCart == true) {
         for (let i = 0; i < cartProducts.length; i++) {
-          cartProducts[i].qty++;
+          if (cartProducts[i].product.id === product.id) {
+            cartProducts[i].qty++;
+          createShoppingCart();
+          updateCartTotalPrice();
+          addToLocalStorage(cartProducts);
+          notice();
+          }
+          
         }
       }
     }
@@ -382,7 +414,7 @@ function updateCartTotalPrice() {
   let sum = 0;
 
   $.each(cartProducts, (i, cartProduct) => {
-    sum += cartProducts[i].count * cartProducts[i].price;
+    sum += cartProducts[i].qty * cartProducts[i].product.price;
   });
 
   $("#totalPrice").html("Total Price:" + " " + sum + " " + "SEK");
@@ -400,7 +432,7 @@ function notice() {
     noticeAmount.appendTo(totalamount);
   } else {
     for (let i = 0; i < cartProducts.length; i++) {
-      let total = (amount += cartProducts[i].count);
+      let total = (amount += cartProducts[i].qty);
 
       let totalamount = $(".notice");
       totalamount.html("");
