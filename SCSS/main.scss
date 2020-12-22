@@ -184,6 +184,12 @@ header {
     position: relative;
     color: black;
   }
+  @include desktop {
+    .atag {
+      visibility: hidden;
+      cursor: none;
+    }
+  }
 
   a:active {
     top: 1px;
