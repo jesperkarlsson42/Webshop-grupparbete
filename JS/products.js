@@ -1,20 +1,26 @@
 let x = 0;
-let y = 0;
-
-class Product {
-  constructor(name, price, image, description) {
-    this.id = x++;
-    this.count = y;
-    this.name = name;
-    this.price = price;
-    this.image = image;
-    this.description = description;
-  }
-}
 
 let products = [];
 let cartProducts = [];
 let listOfTotal = [];
+
+class Product {
+  constructor(name, price, image, description) {
+    this.id = x++;
+    this.name = name;
+    this.price = price;
+    this.image = image;
+    this.description = description;
+    this.inCart = false;
+  }
+}
+
+class CartItem {
+  constructor(product, qty) {
+    this.product = product;
+    this.qty = qty;
+  }
+}
 
 let p1 = new Product(
   "Rolex",
@@ -214,7 +220,9 @@ function createProduct() {
     let addToCartButtons = $("<button>Add to Cart</button>")
       .addClass("AddToCartButton")
       .appendTo(container);
-    addToCartButtons.on("click", { p: product }, clickedAddToCart);
+    addToCartButtons.on("click", () => {
+      clickedAddToCart(products[i]);
+    });
 
     container.appendTo($("#product-container"));
   });
@@ -325,27 +333,49 @@ function deleteCartProduct(e) {
   }
 }
 
-function clickedAddToCart(e) {
-  for (let i = 0; i < cartProducts.length; i++) {
-    if (e.data.p.id === cartProducts[i].id) {
-      e.data.p.count++;
-      createShoppingCart();
-      updateCartTotalPrice();
-      addToLocalStorage(cartProducts);
-      notice();
+function clickedAddToCart(product) {
+  for (let i = 0; i < products.length; i++) {
+    if (product.id === products[i].id) {
+      if (product.inCart == false) {
+        cartProducts.push(new CartItem(product, 1));
+        product.inCart = true;
+
+        console.log(cartProducts);
+
+        // createShoppingCart();
+        // updateCartTotalPrice();
+        // addToLocalStorage(cartProducts);
+        // notice();
+
+      } else if (product.inCart == true) {
+        for (let i = 0; i < cartProducts.length; i++) {
+          cartProducts[i].qty++;
+        }
+      }
     }
   }
 
-  if (e.data.p.count == 0) {
-    e.data.p.count++;
-    let test = e.data.p;
-    console.log(test);
-    cartProducts.push(e.data.p);
-    createShoppingCart();
-    updateCartTotalPrice();
-    addToLocalStorage(cartProducts);
-    notice();
-  }
+  // for (let i = 0; i < cartProducts.length; i++) {
+  //   if (e.data.p.id === cartProducts[i].id) {
+  //     e.data.p.count++;
+  //     createShoppingCart();
+  //     updateCartTotalPrice();
+  //     addToLocalStorage(cartProducts);
+  //     notice();
+  //   }
+  // }
+
+  // if (e.data.p.count == 0) {
+
+  //   e.data.p.count++;
+  //   let test = e.data.p;
+  //   console.log(test);
+  //   cartProducts.push(e.data.p);
+  //   createShoppingCart();
+  //   updateCartTotalPrice();
+  //   addToLocalStorage(cartProducts);
+  //   notice();
+  // }
 }
 
 function updateCartTotalPrice() {
