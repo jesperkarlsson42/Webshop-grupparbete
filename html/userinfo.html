@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Userinfo</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./../js/userinfo.js"></script>
+    <script src="./../js/dropdown.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0435225707.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="./../css/main.css" rel="stylesheet" />
+    <link href="./../css/userinfo.css" rel="stylesheet" />
+    <link href="./../css/dropdown.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--Nav-->
+    <nav>
+      <img src="./../img/logo-watchout.svg" id="logotype" />
+
+      <!--hamburger Dropdown-->
+      <div class="wrapper">
+        <div class="container">
+          <div class="hamburger-menu">
+            <div class="hamburger-btn">
+              <div class="one"></div>
+              <div class="two"></div>
+              <div class="three"></div>
+            </div>
+            <div class="menu">
+              <ul>
+                <li><a href="./../index.html">Home</a></li>
+                <li><a href="./../html/products.html">Products</a></li>
+                <li><a href="./../index.html">About</a></li>
+                <li><a href="#footer">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Menu, Destop-->
+      <ul class="desktop-menu">
+        <li><a href="./../index.html">Home</a></li>
+        <li><a href="./../html/products.html">Products</a></li>
+        <li><a href="./../index.html">About</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!--Header - Name, Slogan-->
+    <header>
+      <h1>Watch<span>Out</span></h1>
+      <h2>Watching with watches</h2>
+    </header>
+
+    <!--Context Section-->
+    <section>
+      <div id="userinfo-container">
+        <form id="userform">
+          <h1>Customer information</h1>
+          <label for="email">Enter your email:</label>
+          <input type="email" id="email" name="email" required /><br />
+
+          <div class="name-holder">
+            <div class="fname">
+              <label for="fname">First name:</label><br />
+              <input
+                pattern="[^0-9]+"
+                type="text"
+                id="fname"
+                name="fname"
+                value=""
+                required
+              /><br />
+            </div>
+            <div class="lname">
+              <label for="lname">Last name:</label><br />
+              <input
+                pattern="[^0-9]+"
+                type="text"
+                id="lname"
+                name="lname"
+                value=""
+                required
+              /><br />
+            </div>
+          </div>
+
+          <label for="address">Address:</label><br />
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value=""
+            required
+          /><br />
+
+          <div class="post-holder">
+            <div class="post">
+              <label for="post">Postcode:</label><br />
+              <input
+                pattern="\d*"
+                type="text"
+                id="post"
+                name="post"
+                value=""
+                required
+              />
+              <br />
+            </div>
+            <div class="town">
+              <label for="town">Town:</label><br />
+              <input
+                pattern="[^0-9]+"
+                type="text"
+                id="post"
+                name="town"
+                value=""
+                required
+              /><br />
+            </div>
+          </div>
+
+          <button id="save">Save</button>
+        </form>
+      </div>
+    </section>
+
+    <!--Footer - Contact info, Social Media-->
+    <footer id="footer">
+      <div class="contactinfo">
+        <p>WatchOut AB</p>
+        <p>Tel : 0 702 123 456</p>
+        <p>Email : info@watchout.se</p>
+        <p>Address : Svedsvägen 012</p>
+      </div>
+      <div class="socialmedia">
+        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+      </div>
+    </footer>
+  </body>
+</html>
