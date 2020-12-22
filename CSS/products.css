@@ -91,7 +91,7 @@
       padding: 10px;
       display: block;
       font-size: 12px;
-      font-weight: 100;
+      font-weight: bold;
       color: black;
       transition: all 0.2s linear;
       text-decoration: none; }
@@ -105,7 +105,7 @@
   content: "";
   position: absolute;
   top: -12%;
-  left: 50%;
+  left: 37%;
   transform: translate(-50%);
   border-top: 10px solid transparent;
   border-bottom: 10px solid #fff;
@@ -119,20 +119,6 @@
 .ui-dialog {
   position: absolute;
   top: 60px !important; }
-
-#clearproducts {
-  height: 30px;
-  width: 70px;
-  margin: 10px;
-  font-size: smaller;
-  font-weight: bold;
-  color: #ffffff;
-  background: grey;
-  font-family: default;
-  font-family: "Montserrat", sans-serif;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer; }
 
 #opener {
   display: inline-block;

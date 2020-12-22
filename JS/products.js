@@ -128,22 +128,6 @@ $(function () {
     createProduct();
   });
 
-  // $("#sortButton").on("click", function () {
-  //   products.sort((a, b) => {
-  //     if (a.price > b.price) {
-  //       return 1;
-  //     }
-
-  //     if (a.price < b.price) {
-  //       return -1;
-  //     }
-
-  //     return 0;
-  //   });
-
-  //   createProduct();
-  // });
-
   $("#buyButton").on("click", function () {
     if (cartProducts.length <= 0) {
       alert("Shopping cart is empty");
@@ -154,13 +138,6 @@ $(function () {
         }
       }
     }
-  });
-
-  $("#clearproducts").on("click", function () {
-    localStorage.clear();
-    cartProducts = [];
-    createShoppingCart();
-    updateCartTotalPrice();
   });
 
   $("#dialog").dialog({
@@ -277,7 +254,7 @@ function createShoppingCart() {
       .addClass("subbtn")
       .on("click", () => {
         subtractOneProduct(cartProducts[i]);
-      })
+      });
     minus.appendTo(counterdiv);
 
     let add = $("<button>+</button>")
@@ -286,7 +263,7 @@ function createShoppingCart() {
       .on("click", () => {
         addOneProduct(cartProducts[i]);
       })
-    .appendTo(counterdiv);
+      .appendTo(counterdiv);
 
     shoppingCartContainer.appendTo($("#shoppingCart-container"));
   });
@@ -295,12 +272,12 @@ function createShoppingCart() {
 function addOneProduct(cartProduct) {
   for (let i = 0; i < cartProducts.length; i++) {
     if (cartProducts[i].product.id == cartProduct.product.id) {
-      console.log('1');
+      console.log("1");
       cartProducts[i].qty++;
       createShoppingCart();
     }
-    if (cartProducts[i].product.qty > 1) {
-      let tempsum = cartProducts[i].product.qty * 1;
+    if (cartProducts[i].qty > 1) {
+      let tempsum = cartProducts[i].qty * 1;
       let total = tempsum * parseInt(cartProducts[i].product.price);
       listOfTotal.push(total);
       updateCartTotalPrice();
@@ -309,6 +286,7 @@ function addOneProduct(cartProduct) {
     } else {
       updateCartTotalPrice();
       notice();
+      addToLocalStorage(cartProducts);
     }
   }
 }
@@ -330,12 +308,11 @@ function subtractOneProduct(cartProduct) {
 }
 
 function deleteCartProduct(cartProduct) {
-
   for (let i = 0; i < cartProducts.length; i++) {
     if (cartProducts[i].product.id == cartProduct.product.id) {
       cartProducts.splice(i, 1);
       cartProduct.product.inCart = false;
-      
+
       console.log(cartProducts);
     }
     createShoppingCart();
@@ -344,20 +321,6 @@ function deleteCartProduct(cartProduct) {
     addToLocalStorage(cartProducts);
   }
 }
-
-// function deleteCartProduct(e) {
-//   for (let i = 0; i < cartProducts.length; i++) {
-//     if (cartProducts[i].id == e.data.c.id) {
-//       cartProducts.splice(i, 1);
-//       e.data.c.count = 0;
-//     }
-
-//     createShoppingCart();
-//     updateCartTotalPrice();
-//     notice();
-//     addToLocalStorage(cartProducts);
-//   }
-// }
 
 function clickedAddToCart(product) {
   for (let i = 0; i < products.length; i++) {
@@ -376,38 +339,15 @@ function clickedAddToCart(product) {
         for (let i = 0; i < cartProducts.length; i++) {
           if (cartProducts[i].product.id === product.id) {
             cartProducts[i].qty++;
-          createShoppingCart();
-          updateCartTotalPrice();
-          addToLocalStorage(cartProducts);
-          notice();
+            createShoppingCart();
+            updateCartTotalPrice();
+            addToLocalStorage(cartProducts);
+            notice();
           }
-          
         }
       }
     }
   }
-
-  // for (let i = 0; i < cartProducts.length; i++) {
-  //   if (e.data.p.id === cartProducts[i].id) {
-  //     e.data.p.count++;
-  //     createShoppingCart();
-  //     updateCartTotalPrice();
-  //     addToLocalStorage(cartProducts);
-  //     notice();
-  //   }
-  // }
-
-  // if (e.data.p.count == 0) {
-
-  //   e.data.p.count++;
-  //   let test = e.data.p;
-  //   console.log(test);
-  //   cartProducts.push(e.data.p);
-  //   createShoppingCart();
-  //   updateCartTotalPrice();
-  //   addToLocalStorage(cartProducts);
-  //   notice();
-  // }
 }
 
 function updateCartTotalPrice() {
